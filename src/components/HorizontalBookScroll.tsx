@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Book } from '../types/book';
 import { Button } from './ui/button';
-import { useMobileNav } from './mobilenav'; // updated correct path here
+import { useMobileNav } from './MobileNav'; // updated correct path here
 
 interface HorizontalBookScrollProps {
   title: string;
