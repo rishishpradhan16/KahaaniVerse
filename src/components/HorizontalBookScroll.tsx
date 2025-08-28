@@ -11,11 +11,11 @@ interface HorizontalBookScrollProps {
   className?: string;
 }
 
-const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({ 
-  title, 
-  books, 
+const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
+  title,
+  books,
   onBookSelect,
-  className = ""
+  className = ''
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -35,7 +35,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
     if (scrollElement) {
       scrollElement.addEventListener('scroll', checkScrollButtons);
       window.addEventListener('resize', checkScrollButtons);
-      
+
       return () => {
         scrollElement.removeEventListener('scroll', checkScrollButtons);
         window.removeEventListener('resize', checkScrollButtons);
@@ -59,15 +59,16 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
     <section className={`mb-12 ${className}`}>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
-        
+
         {/* Desktop Arrow Controls */}
-        <div className="hidden md:flex gap-2">
+        <div className="hidden md:flex gap-2 relative z-10">
           <Button
             variant="outline"
             size="sm"
             onClick={() => scroll('left')}
             disabled={!canScrollLeft}
             className="h-8 w-8 p-0"
+            aria-label="Scroll left"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -77,6 +78,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
             onClick={() => scroll('right')}
             disabled={!canScrollRight}
             className="h-8 w-8 p-0"
+            aria-label="Scroll right"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
@@ -90,18 +92,19 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
             variant="outline"
             size="sm"
             onClick={() => scroll('left')}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 h-8 w-8 p-0 md:hidden bg-background/80 backdrop-blur-sm"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 h-8 w-8 p-0 md:hidden bg-background/80 backdrop-blur-sm"
+            aria-label="Scroll left"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
         )}
-        
         {canScrollRight && (
           <Button
             variant="outline"
             size="sm"
             onClick={() => scroll('right')}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 h-8 w-8 p-0 md:hidden bg-background/80 backdrop-blur-sm"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 h-8 w-8 p-0 md:hidden bg-background/80 backdrop-blur-sm"
+            aria-label="Scroll right"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
