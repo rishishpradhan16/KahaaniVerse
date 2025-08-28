@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Bookmark, Clock, Library, Grid3X3 } from 'lucide-react';
 import { Button } from './ui/button';
@@ -12,6 +12,22 @@ interface MobileNavProps {
 
 const MobileNav: React.FC<MobileNavProps> = ({ currentView, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close drawer on window scroll
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Cleanup listener on unmount or when drawer closes
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isOpen]);
 
   const navItems = [
     { id: 'home' as ViewState, label: 'Home', icon: Home },
