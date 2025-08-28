@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Book } from '../types/book';
 import { Button } from './ui/button';
+import { useMobileNav } from '../context/MobileNavContext';
 
 interface HorizontalBookScrollProps {
   title: string;
@@ -17,6 +18,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
   onBookSelect,
   className = ''
 }) => {
+  const { isMobileMenuOpen } = useMobileNav(); // MENU DRAWER STATE
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -59,7 +61,6 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
     <section className={`mb-12 ${className}`}>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
-
         {/* Desktop Arrow Controls */}
         <div className="hidden md:flex gap-2 relative z-10">
           <Button
@@ -68,7 +69,6 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
             onClick={() => scroll('left')}
             disabled={!canScrollLeft}
             className="h-8 w-8 p-0"
-            aria-label="Scroll left"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -78,33 +78,30 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
             onClick={() => scroll('right')}
             disabled={!canScrollRight}
             className="h-8 w-8 p-0"
-            aria-label="Scroll right"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
       </div>
-
       <div className="relative">
-        {/* Mobile Arrow Controls */}
-        {canScrollLeft && (
+        {/* Mobile Arrow Controls - hide when mobile menu is open */}
+        {canScrollLeft && !isMobileMenuOpen && (
           <Button
             variant="outline"
             size="sm"
             onClick={() => scroll('left')}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 h-8 w-8 p-0 md:hidden bg-background/80 backdrop-blur-sm"
-            aria-label="Scroll left"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 h-8 w-8 p-0 md:hidden bg-background/80 backdrop-blur-sm"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
         )}
-        {canScrollRight && (
+
+        {canScrollRight && !isMobileMenuOpen && (
           <Button
             variant="outline"
             size="sm"
             onClick={() => scroll('right')}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 h-8 w-8 p-0 md:hidden bg-background/80 backdrop-blur-sm"
-            aria-label="Scroll right"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 h-8 w-8 p-0 md:hidden bg-background/80 backdrop-blur-sm"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
