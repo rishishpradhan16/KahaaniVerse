@@ -12,9 +12,9 @@ interface HorizontalBookScrollProps {
   className?: string;
 }
 
-const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({ 
-  title, 
-  books, 
+const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
+  title,
+  books,
   onBookSelect,
   className = ""
 }) => {
@@ -37,7 +37,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
     if (scrollElement) {
       scrollElement.addEventListener('scroll', checkScrollButtons);
       window.addEventListener('resize', checkScrollButtons);
-      
+
       return () => {
         scrollElement.removeEventListener('scroll', checkScrollButtons);
         window.removeEventListener('resize', checkScrollButtons);
@@ -61,7 +61,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
     <section className={`mb-12 ${className}`}>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
-        
+
         {/* Desktop Arrow Controls */}
         <div className="hidden md:flex gap-2">
           <Button
@@ -84,9 +84,8 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
           </Button>
         </div>
       </div>
-
       <div className="relative">
-        {/* Mobile Arrow Controls - hide when mobile menu is open */}
+        {/* Mobile Arrow Controls - hide completely when mobile menu is open */}
         {canScrollLeft && !isMobileMenuOpen && (
           <Button
             variant="outline"
@@ -97,7 +96,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
             <ChevronLeft className="h-4 w-4" />
           </Button>
         )}
-        
+
         {canScrollRight && !isMobileMenuOpen && (
           <Button
             variant="outline"
