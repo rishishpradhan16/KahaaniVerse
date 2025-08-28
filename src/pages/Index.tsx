@@ -120,53 +120,155 @@ const Index = () => {
   const renderHeader = () => (
     <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="flex items-center justify-between p-4 md:p-6 max-w-6xl mx-auto">
-        {/* Mobile Header Layout */}
-        <div className="flex items-center gap-2 md:gap-6 flex-1 md:hidden">
+        <div className="flex items-center gap-4 md:gap-6 flex-1">
           <h1 
-            className="text-lg font-bold text-primary cursor-pointer whitespace-nowrap" 
+            className="text-xl md:text-2xl font-bold text-primary cursor-pointer" 
             onClick={() => handleNavigation('home')}
           >
             KahaaniVerse
           </h1>
           
-          <div className="relative flex-1 max-w-[60%]">
-            <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+          <div className="relative w-full max-w-md md:max-w-80">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search books…"
-              className="pl-8 h-8 text-sm bg-surface border-border focus:border-primary"
+              placeholder="Search books, authors, genres..."
+              className="pl-10 bg-surface border-border focus:border-primary"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            {/* Mobile Search Results Dropdown */}
+            
+            {/* Search Results Dropdown */}
             {searchState === 'results' && filteredBooks.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-lg shadow-lg z-50 max-h-[70vh] overflow-y-auto">
+              <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-lg shadow-lg z-50 max-h-80 overflow-y-auto">
                 {filteredBooks.map((book) => (
                   <div
                     key={book.id}
-                    className="flex items-center gap-2 p-2 hover:bg-surface-hover cursor-pointer border-b border-border last:border-b-0"
+                    className="flex items-center gap-3 p-3 hover:bg-surface-hover cursor-pointer border-b border-border last:border-b-0"
                     onClick={() => {
                       handleBookSelect(book);
                       setSearchQuery('');
                     }}
                   >
-                    <img src={book.cover} alt={book.title} className="w-8 h-10 object-cover rounded" />
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-foreground text-xs truncate">{book.title}</h4>
-                      <p className="text-xs text-muted-foreground truncate">{book.author}</p>
+                    <img
+                      src={book.cover}
+                      alt={book.title}
+                      className="w-12 h-16 object-cover rounded"
+                    />
+                    <div className="flex-1">
+                      <h4 className="font-medium text-foreground">{book.title}</h4>
+                      <p className="text-sm text-muted-foreground">{book.author}</p>
+                      <p className="text-xs text-primary uppercase">{book.genre}</p>
                     </div>
                   </div>
                 ))}
               </div>
             )}
+            
+            {searchState === 'results' && filteredBooks.length === 0 && searchQuery.trim() !== '' && (
+              <div className="absolute top-full left-0 right-0 mt-1 bg-card border border-border rounded-lg shadow-lg z-50 p-4">
+                <p className="text-muted-foreground text-center">No books found for "{searchQuery}"</p>
+              </div>
+            )}
           </div>
         </div>
-
-        {/* Desktop/Tablet Header */}
-        {/* ... (rest of your header code stays same, untouched) */}
         
+        {/* Mobile Navigation */}
         <MobileNav currentView={viewState} onNavigate={handleNavigation} />
-        {/* Desktop Navigation */}
-        {/* ... unchanged */}
+        
+        {/* Desktop Navigation with More Dropdown */}
+        <div className="hidden lg:block">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${viewState === 'home' ? 'bg-accent/50 text-accent-foreground' : 'bg-background'}`}
+                  onClick={() => handleNavigation('home')}
+                >
+                  Home
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${viewState === 'bookmarks' ? 'bg-accent/50 text-accent-foreground' : 'bg-background'}`}
+                  onClick={() => handleNavigation('bookmarks')}
+                >
+                  Bookmarks
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${viewState === 'latest' ? 'bg-accent/50 text-accent-foreground' : 'bg-background'}`}
+                  onClick={() => handleNavigation('latest')}
+                >
+                  Latest
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${viewState === 'library' ? 'bg-accent/50 text-accent-foreground' : 'bg-background'}`}
+                  onClick={() => handleNavigation('library')}
+                >
+                  My Library
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${viewState === 'categories' ? 'bg-accent/50 text-accent-foreground' : 'bg-background'}`}
+                  onClick={() => handleNavigation('categories')}
+                >
+                  Categories
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
+        {/* Tablet Navigation with More Dropdown */}
+        <div className="hidden md:block lg:hidden">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink 
+                  className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 cursor-pointer ${viewState === 'home' ? 'bg-accent/50 text-accent-foreground' : 'bg-background'}`}
+                  onClick={() => handleNavigation('home')}
+                >
+                  Home
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="h-10">More</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-48 p-2">
+                    <NavigationMenuLink 
+                      className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer ${viewState === 'bookmarks' ? 'bg-accent/50' : ''}`}
+                      onClick={() => handleNavigation('bookmarks')}
+                    >
+                      Bookmarks
+                    </NavigationMenuLink>
+                    <NavigationMenuLink 
+                      className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer ${viewState === 'latest' ? 'bg-accent/50' : ''}`}
+                      onClick={() => handleNavigation('latest')}
+                    >
+                      Latest
+                    </NavigationMenuLink>
+                    <NavigationMenuLink 
+                      className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer ${viewState === 'library' ? 'bg-accent/50' : ''}`}
+                      onClick={() => handleNavigation('library')}
+                    >
+                      My Library
+                    </NavigationMenuLink>
+                    <NavigationMenuLink 
+                      className={`block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer ${viewState === 'categories' ? 'bg-accent/50' : ''}`}
+                      onClick={() => handleNavigation('categories')}
+                    >
+                      Categories
+                    </NavigationMenuLink>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
       </div>
     </div>
   );
@@ -176,27 +278,22 @@ const Index = () => {
       case 'home':
         return (
           <div className="pt-8 max-w-6xl mx-auto">
-            <BookCarousel books={sampleBooks} onBookSelect={handleBookSelect} />
-            
-            <div className="px-4 md:px-6 mt-12">
+            <div className="px-4 md:px-6">
               <HorizontalBookScroll 
                 title="Trending Now" 
                 books={sampleBooks} 
                 onBookSelect={handleBookSelect} 
               />
-            </div>
-
-            {/* Category-wise Books */}
-            <div className="px-4 md:px-6 mt-16">
-              {/* All categories unchanged */}
-              <HorizontalBookScroll title="Mystery Thriller" books={getBooksByCategory('Mystery Thriller')} onBookSelect={handleBookSelect} />
-              <HorizontalBookScroll title="Horror" books={getBooksByCategory('Horror')} onBookSelect={handleBookSelect} />
-              <HorizontalBookScroll title="Romance" books={getBooksByCategory('Romance')} onBookSelect={handleBookSelect} />
-              <HorizontalBookScroll title="Sci-Fi" books={getBooksByCategory('Sci-Fi')} onBookSelect={handleBookSelect} />
-              <HorizontalBookScroll title="Fantasy" books={getBooksByCategory('Fantasy')} onBookSelect={handleBookSelect} />
-              <HorizontalBookScroll title="Short Stories" books={getBooksByCategory('Short Stories')} onBookSelect={handleBookSelect} />
-              <HorizontalBookScroll title="Drama / Philosophy" books={getBooksByCategory('Drama / Philosophy')} onBookSelect={handleBookSelect} />
-              <HorizontalBookScroll title="True Crime / Realistic Fiction" books={getBooksByCategory('True Crime / Realistic Fiction')} onBookSelect={handleBookSelect} />
+              <HorizontalBookScroll 
+                title="Mystery Thriller" 
+                books={getBooksByCategory('Mystery Thriller')} 
+                onBookSelect={handleBookSelect} 
+              />
+              <HorizontalBookScroll 
+                title="Horror" 
+                books={getBooksByCategory('Horror')} 
+                onBookSelect={handleBookSelect} 
+              />
             </div>
           </div>
         );
@@ -208,7 +305,7 @@ const Index = () => {
               books={getBookmarkedBooks()} 
               onBookSelect={handleBookSelect} 
               title="Bookmarked Books"
-              emptyMessage="No bookmarked books yet."
+              emptyMessage="No bookmarked books yet. Start reading and bookmark pages to see them here!"
             />
           </div>
         );
@@ -228,7 +325,10 @@ const Index = () => {
       case 'library':
         return (
           <div className="pt-8 max-w-6xl mx-auto">
-            <LibraryGrid books={getLibraryBooks()} onBookSelect={handleBookSelect} />
+            <LibraryGrid 
+              books={getLibraryBooks()} 
+              onBookSelect={handleBookSelect} 
+            />
           </div>
         );
         
@@ -248,7 +348,13 @@ const Index = () => {
     <div className="min-h-screen w-full bg-background">
       <AnimatePresence mode="wait">
         {(viewState === 'home' || viewState === 'bookmarks' || viewState === 'latest' || viewState === 'library' || viewState === 'categories') && (
-          <motion.div key={viewState} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen">
+          <motion.div
+            key={viewState}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="min-h-screen"
+          >
             {renderHeader()}
             {renderContent()}
             <Footer />
@@ -256,14 +362,31 @@ const Index = () => {
         )}
 
         {viewState === 'book-cover' && selectedBook && (
-          <motion.div key="book-cover" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <BookCover book={selectedBook} onBack={handleBackToHome} onStartReading={handleStartReading} />
+          <motion.div
+            key="book-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <BookCover
+              book={selectedBook}
+              onBack={handleBackToHome}
+              onStartReading={handleStartReading}
+            />
           </motion.div>
         )}
 
         {viewState === 'reading' && selectedBook && (
-          <motion.div key="reading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <BookReader book={selectedBook} onBack={handleBackToHome} />
+          <motion.div
+            key="reading"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <BookReader
+              book={selectedBook}
+              onBack={handleBackToHome}
+            />
           </motion.div>
         )}
       </AnimatePresence>
