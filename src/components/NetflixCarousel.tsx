@@ -97,32 +97,28 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
     <section className="mb-12">
       <h2 className="text-2xl font-bold text-foreground mb-6">{title}</h2>
       <div className="relative">
-        {/* Left Arrow */}
         {canScrollLeft && (
           <Button
             variant="ghost"
             size="sm"
             onClick={scrollLeft}
-            className="absolute left-0 top-1/2 z-20 p-2 rounded-full hover:bg-surface-hover transform -translate-y-1/2"
+            className="absolute left-3 top-1/2 z-20 p-2 rounded-full hover:bg-surface-hover transform -translate-y-1/2"
             aria-label="Scroll left"
           >
             <ChevronLeft className="h-5 w-5" />
           </Button>
         )}
-
-        {/* Right Arrow */}
         {canScrollRight && (
           <Button
             variant="ghost"
             size="sm"
             onClick={scrollRight}
-            className="absolute right-0 top-1/2 z-20 p-2 rounded-full hover:bg-surface-hover transform -translate-y-1/2"
+            className="absolute right-3 top-1/2 z-20 p-2 rounded-full hover:bg-surface-hover transform -translate-y-1/2"
             aria-label="Scroll right"
           >
             <ChevronRight className="h-5 w-5" />
           </Button>
         )}
-
         <div
           ref={scrollRef}
           className="overflow-hidden"
@@ -150,42 +146,31 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div
-                  className="cursor-pointer group h-full"
-                  onClick={() => onBookSelect(book)}
-                >
-                  {/* Book Cover */}
+                <div className="cursor-pointer group h-full" onClick={() => onBookSelect(book)}>
                   <div className="relative overflow-hidden rounded-xl shadow-lg mb-4 aspect-[3/4]">
                     <img
                       src={book.cover}
                       alt={book.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    {/* Hover Info */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       <p className="text-sm font-medium truncate">{book.title}</p>
                       <p className="text-xs opacity-90 truncate">{book.author}</p>
                     </div>
                   </div>
-                  {/* Book Info */}
                   <div className="space-y-2">
                     <h3 className="font-semibold text-foreground text-sm line-clamp-2 group-hover:text-primary transition-colors">
                       {book.title}
                     </h3>
                     <p className="text-xs text-muted-foreground truncate">{book.author}</p>
-                    <p className="text-xs text-primary uppercase tracking-wide font-medium">
-                      {book.genre}
-                    </p>
+                    <p className="text-xs text-primary uppercase tracking-wide font-medium">{book.genre}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </motion.div>
         </div>
-
-        {/* Mobile Swipe Indicator */}
         <div className="md:hidden flex justify-center mt-4 space-x-2">
           {Array.from({ length: Math.ceil(books.length / itemsPerView) }).map((_, index) => (
             <div
@@ -197,8 +182,6 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
           ))}
         </div>
       </div>
-
-      {/* Accessibility hint for keyboard users */}
       <div className="sr-only" aria-live="polite">
         Showing books {currentIndex + 1} to {Math.min(currentIndex + itemsPerView, books.length)} of {books.length}
       </div>
