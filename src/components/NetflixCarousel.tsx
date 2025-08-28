@@ -31,7 +31,6 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
     const handleResize = () => {
       setItemsPerView(getItemsPerView());
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -60,7 +59,6 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
   // Touch/swipe support for mobile
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
-
   const minSwipeDistance = 50;
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -74,11 +72,10 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
-
     if (isLeftSwipe && canScrollRight) {
       scrollRight();
     }
@@ -96,7 +93,6 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
         scrollRight();
       }
     };
-
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [canScrollLeft, canScrollRight]);
@@ -107,32 +103,35 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
     <section className="mb-12">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
-        
-        {/* Desktop Navigation Arrows */}
-        <div className="hidden md:flex items-center gap-2">
+      </div>
+      {/* Carousel Container with relative positioning for inside arrows */}
+      <div className="relative">
+        {/* Left Arrow - visible only when can scroll left */}
+        {canScrollLeft && (
           <Button
             variant="ghost"
             size="sm"
             onClick={scrollLeft}
-            disabled={!canScrollLeft}
-            className="p-2 rounded-full hover:bg-surface-hover disabled:opacity-50"
+            className="absolute top-1/2 left-0 z-20 p-2 rounded-full hover:bg-surface-hover transform -translate-y-1/2"
+            aria-label="Scroll left"
           >
             <ChevronLeft className="h-5 w-5" />
           </Button>
+        )}
+
+        {/* Right Arrow - visible only when can scroll right */}
+        {canScrollRight && (
           <Button
             variant="ghost"
             size="sm"
             onClick={scrollRight}
-            disabled={!canScrollRight}
-            className="p-2 rounded-full hover:bg-surface-hover disabled:opacity-50"
+            className="absolute top-1/2 right-0 z-20 p-2 rounded-full hover:bg-surface-hover transform -translate-y-1/2"
+            aria-label="Scroll right"
           >
             <ChevronRight className="h-5 w-5" />
           </Button>
-        </div>
-      </div>
+        )}
 
-      {/* Carousel Container */}
-      <div className="relative">
         <div
           ref={scrollRef}
           className="overflow-hidden"
@@ -155,14 +154,17 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
               <motion.div
                 key={book.id}
                 className={`flex-shrink-0 ${
-                  itemsPerView === 1 ? 'w-full' :
-                  itemsPerView === 2 ? 'w-1/2' :
-                  itemsPerView === 3 ? 'w-1/3' :
-                  'w-1/4'
+                  itemsPerView === 1
+                    ? 'w-full'
+                    : itemsPerView === 2
+                    ? 'w-1/2'
+                    : itemsPerView === 3
+                    ? 'w-1/3'
+                    : 'w-1/4'
                 } px-2`}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -179,14 +181,12 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
                     />
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
                     {/* Hover Info */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       <p className="text-sm font-medium truncate">{book.title}</p>
                       <p className="text-xs opacity-90 truncate">{book.author}</p>
                     </div>
                   </div>
-
                   {/* Book Info */}
                   <div className="space-y-2">
                     <h3 className="font-semibold text-foreground text-sm line-clamp-2 group-hover:text-primary transition-colors">
@@ -202,7 +202,6 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
             ))}
           </motion.div>
         </div>
-
         {/* Mobile Swipe Indicator */}
         <div className="md:hidden flex justify-center mt-4 space-x-2">
           {Array.from({ length: Math.ceil(books.length / itemsPerView) }).map((_, index) => (
@@ -217,7 +216,6 @@ const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookS
           ))}
         </div>
       </div>
-
       {/* Accessibility hint for keyboard users */}
       <div className="sr-only" aria-live="polite">
         Showing books {currentIndex + 1} to {Math.min(currentIndex + itemsPerView, books.length)} of {books.length}
