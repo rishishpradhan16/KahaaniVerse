@@ -12,13 +12,13 @@ interface HorizontalBookScrollProps {
   className?: string;
 }
 
-const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
-  title,
-  books,
+const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({ 
+  title, 
+  books, 
   onBookSelect,
-  className = ''
+  className = ""
 }) => {
-  const { isMobileMenuOpen } = useMobileNav(); // MENU DRAWER STATE
+  const { isMobileMenuOpen } = useMobileNav();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -37,7 +37,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
     if (scrollElement) {
       scrollElement.addEventListener('scroll', checkScrollButtons);
       window.addEventListener('resize', checkScrollButtons);
-
+      
       return () => {
         scrollElement.removeEventListener('scroll', checkScrollButtons);
         window.removeEventListener('resize', checkScrollButtons);
@@ -61,8 +61,9 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
     <section className={`mb-12 ${className}`}>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
+        
         {/* Desktop Arrow Controls */}
-        <div className="hidden md:flex gap-2 relative z-10">
+        <div className="hidden md:flex gap-2">
           <Button
             variant="outline"
             size="sm"
@@ -83,6 +84,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
           </Button>
         </div>
       </div>
+
       <div className="relative">
         {/* Mobile Arrow Controls - hide when mobile menu is open */}
         {canScrollLeft && !isMobileMenuOpen && (
@@ -95,7 +97,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
             <ChevronLeft className="h-4 w-4" />
           </Button>
         )}
-
+        
         {canScrollRight && !isMobileMenuOpen && (
           <Button
             variant="outline"
