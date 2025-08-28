@@ -139,7 +139,7 @@ const Index = () => {
               />
               {/* Mobile input */}
               <Input
-                placeholder="Search books..."
+                placeholder="Search..."
                 className="pl-10 bg-surface border-border focus:border-primary block sm:hidden"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
