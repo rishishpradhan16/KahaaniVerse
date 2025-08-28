@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Book } from '../types/book';
 import { Button } from './ui/button';
-import { useMobileNav } from '../context/MobileNavContext';
+import { useMobileNav } from './mobilenav'; // updated correct path here
 
 interface HorizontalBookScrollProps {
   title: string;
@@ -16,7 +16,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
   title,
   books,
   onBookSelect,
-  className = ""
+  className = "",
 }) => {
   const { isMobileMenuOpen } = useMobileNav();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -50,7 +50,7 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
       const scrollAmount = scrollRef.current.clientWidth * 0.8;
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
