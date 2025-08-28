@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Bookmark, BookmarkCheck, X, Languages } from 'lucide-react';
-import { Book, BookPage, Language } from '../types/book';
+import { Book, Language } from '../types/book';
 import { useBooks } from '../context/BookContext';
 import { Button } from './ui/button';
 import { useToast } from '../hooks/use-toast';
@@ -14,26 +14,25 @@ interface BookReaderProps {
 }
 
 export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
-  const { state, dispatch } = useBooks();
+  const { dispatch } = useBooks();
   const { toast } = useToast();
+
   const [currentLanguage, setCurrentLanguage] = useState<Language>('english');
   const [isFlipping, setIsFlipping] = useState(false);
-  
-  // Initialize page from bookmark FIRST, before any other state
+  const [isLanguagePopoverOpen, setIsLanguagePopoverOpen] = useState(false); // ✅ added from v1
+
+  // Initialize page from bookmark 
   const savedBookmark = localStorage.getBookmark(book.id);
   const initialPageIndex = savedBookmark ? Math.max(0, savedBookmark - 1) : 0;
   const [currentPageIndex, setCurrentPageIndex] = useState(initialPageIndex);
-  
-  // Get current book content based on language
+
   const currentBookContent = book.languages[currentLanguage] || book.languages.english;
   const currentPage = currentBookContent.pages[currentPageIndex];
-  
-  // Check bookmark state from localStorage
+
   const isBookmarked = localStorage.getBookmark(book.id) === currentPage?.pageNumber;
 
-  // Load saved state from localStorage - ONLY for library, not page position
+  // Load saved state from localStorage
   useEffect(() => {
-    // Add book to library if not already there
     const library = localStorage.getLibrary();
     const existingBook = library.find(b => b.bookId === book.id);
     if (!existingBook) {
@@ -47,77 +46,52 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       localStorage.setLibrary([...library, newLibraryBook]);
     }
 
-    // Load saved language preference
     const savedLanguage = localStorage.getLanguagePreference();
     setCurrentLanguage(savedLanguage);
   }, [book.id]);
 
-  // Use refs to always have access to current values without re-creating event handlers
+  // Stable Refs
   const currentPageIndexRef = useRef(currentPageIndex);
   const currentBookContentRef = useRef(currentBookContent);
   const flipTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  
-  // Keep refs updated
+
   useEffect(() => {
     currentPageIndexRef.current = currentPageIndex;
   }, [currentPageIndex]);
-  
+
   useEffect(() => {
     currentBookContentRef.current = currentBookContent;
   }, [currentBookContent]);
 
-  // Robust navigation functions with refs - ALWAYS work regardless of state
+  // Navigation (stable)
   const nextPageStable = useCallback(() => {
     const currentIndex = currentPageIndexRef.current;
     const totalPages = currentBookContentRef.current.pages.length;
-    
+
     if (currentIndex < totalPages - 1) {
-      // Clear any existing timeout
-      if (flipTimeoutRef.current) {
-        clearTimeout(flipTimeoutRef.current);
-      }
-      
-      // Update immediately for responsive navigation
+      if (flipTimeoutRef.current) clearTimeout(flipTimeoutRef.current);
       setCurrentPageIndex(currentIndex + 1);
       setIsFlipping(true);
-      
-      // Clear flipping state after animation
-      flipTimeoutRef.current = setTimeout(() => {
-        setIsFlipping(false);
-      }, 300);
+      flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   }, []);
 
   const prevPageStable = useCallback(() => {
     const currentIndex = currentPageIndexRef.current;
-    
     if (currentIndex > 0) {
-      // Clear any existing timeout
-      if (flipTimeoutRef.current) {
-        clearTimeout(flipTimeoutRef.current);
-      }
-      
-      // Update immediately for responsive navigation
+      if (flipTimeoutRef.current) clearTimeout(flipTimeoutRef.current);
       setCurrentPageIndex(currentIndex - 1);
       setIsFlipping(true);
-      
-      // Clear flipping state after animation
-      flipTimeoutRef.current = setTimeout(() => {
-        setIsFlipping(false);
-      }, 300);
+      flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   }, []);
 
-  // PERSISTENT keyboard navigation - never stops working
+  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Skip only if typing in input fields
       const activeElement = document.activeElement;
-      if (activeElement?.tagName === 'INPUT' || activeElement?.tagName === 'TEXTAREA') {
-        return;
-      }
+      if (activeElement?.tagName === 'INPUT' || activeElement?.tagName === 'TEXTAREA') return;
 
-      // Handle arrow keys regardless of modifiers for maximum reliability
       switch (e.key) {
         case 'ArrowLeft':
           e.preventDefault();
@@ -138,13 +112,11 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
           break;
       }
     };
-
-    // Use capture phase for maximum reliability
     window.addEventListener('keydown', handleKeyDown, { capture: true });
     return () => window.removeEventListener('keydown', handleKeyDown, { capture: true });
   }, [nextPageStable, prevPageStable, onBack]);
 
-  // Update reading progress when page changes
+  // Update reading progress
   useEffect(() => {
     if (currentPage) {
       const newProgress = {
@@ -157,8 +129,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
         type: 'UPDATE_READING_PROGRESS',
         payload: newProgress
       });
-      
-      // Save to localStorage
+
       const allProgress = localStorage.getReadingProgress();
       const existingIndex = allProgress.findIndex(p => p.bookId === book.id);
       if (existingIndex >= 0) {
@@ -170,92 +141,65 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     }
   }, [currentPageIndex, currentPage, book.id, dispatch]);
 
-
-  // NON-BLOCKING bookmark toggle
+  // Bookmark toggle
   const toggleBookmark = () => {
     if (!currentPage) return;
-
     const currentPageNumber = currentPage.pageNumber;
-    
+
     if (isBookmarked) {
-      // Remove bookmark
       localStorage.clearBookmark(book.id);
-      
-      // Update context for compatibility
       dispatch({
         type: 'REMOVE_BOOKMARK',
         payload: { bookId: book.id, pageId: currentPage.id }
       });
-      
       toast({
         title: "Bookmark removed",
         description: `Removed bookmark from page ${currentPageNumber}`,
       });
     } else {
-      // Set bookmark - validates bounds and overwrites existing
       if (currentPageNumber >= 1 && currentPageNumber <= currentBookContent.pages.length) {
         localStorage.setBookmark(book.id, currentPageNumber);
-        
-        // Update context for compatibility
+
         const newBookmark = {
           bookId: book.id,
           pageId: currentPage.id,
           pageNumber: currentPageNumber,
           timestamp: Date.now()
         };
-        
+
         dispatch({
           type: 'ADD_BOOKMARK',
           payload: newBookmark
         });
-        
+
         toast({
           title: "Bookmark saved",
           description: `Bookmarked page ${currentPageNumber}`,
         });
       }
     }
-    
-    // Force re-render to update bookmark icon immediately
-    // This is non-blocking and doesn't affect navigation
     setCurrentPageIndex(currentPageIndex);
   };
 
-  // Button navigation functions - use stable navigation for consistency
-  const nextPage = () => {
-    nextPageStable();
-  };
-
-  const prevPage = () => {
-    prevPageStable();
-  };
+  // Navigation
+  const nextPage = () => nextPageStable();
+  const prevPage = () => prevPageStable();
 
   const goToPage = (index: number) => {
     if (index >= 0 && index < currentBookContent.pages.length) {
-      // Clear any existing timeout
-      if (flipTimeoutRef.current) {
-        clearTimeout(flipTimeoutRef.current);
-      }
-      
+      if (flipTimeoutRef.current) clearTimeout(flipTimeoutRef.current);
       setCurrentPageIndex(index);
       setIsFlipping(true);
-      
-      flipTimeoutRef.current = setTimeout(() => {
-        setIsFlipping(false);
-      }, 300);
+      flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   };
 
+  // ✅ Updated Language Selector - closes popover properly like version 1
   const changeLanguage = (language: Language) => {
     setCurrentLanguage(language);
     localStorage.setLanguagePreference(language);
-    
-    // Reset to first page when changing language
     setCurrentPageIndex(0);
-    
-    // Close the popover by clicking outside
-    document.body.click();
-    
+    setIsLanguagePopoverOpen(false); // ✅ Correctly close popover
     toast({
       title: "Language changed",
       description: `Switched to ${language}`,
@@ -275,7 +219,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
           <X className="h-5 w-5" />
           <span className="hidden md:inline">Close Book</span>
         </button>
-        
+
         <div className="text-center">
           <h1 className="text-lg font-semibold text-foreground">{currentBookContent.title}</h1>
           <p className="text-sm text-muted-foreground">
@@ -284,7 +228,8 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
         </div>
 
         <div className="flex items-center gap-2">
-          <Popover>
+          {/* ✅ Controlled Language Popover */}
+          <Popover open={isLanguagePopoverOpen} onOpenChange={setIsLanguagePopoverOpen}>
             <PopoverTrigger asChild>
               <Button variant="ghost" size="sm">
                 <Languages className="h-5 w-5" />
@@ -319,7 +264,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               </div>
             </PopoverContent>
           </Popover>
-          
+
           <Button
             onClick={toggleBookmark}
             variant="ghost"
@@ -369,7 +314,6 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               Previous
             </Button>
 
-            {/* Numeric Pagination */}
             <div className="flex items-center gap-1">
               {currentBookContent.pages.map((_, index) => (
                 <button
@@ -398,7 +342,6 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
             </Button>
           </div>
 
-          {/* Keyboard hints */}
           <div className="text-center mt-4 text-sm text-muted-foreground">
             Use arrow keys to navigate • ESC to close
           </div>
