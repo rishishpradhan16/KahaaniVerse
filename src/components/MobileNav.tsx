@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Bookmark, Clock, Library, Grid3X3 } from 'lucide-react';
 import { Button } from './ui/button';
@@ -8,12 +8,33 @@ type ViewState = 'home' | 'book-cover' | 'reading' | 'bookmarks' | 'latest' | 'l
 interface MobileNavProps {
   currentView: ViewState;
   onNavigate: (view: ViewState) => void;
+  onDrawerToggle?: (isOpen: boolean) => void; // optional callback to inform parent of drawer state
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({ currentView, onNavigate }) => {
+const MobileNav: React.FC<MobileNavProps> = ({ currentView, onNavigate, onDrawerToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
 
-  // Close drawer on window scroll
+  // Close drawer on outside click
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        drawerRef.current &&
+        !drawerRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Close drawer on scroll
   useEffect(() => {
     if (!isOpen) return;
 
@@ -23,11 +44,17 @@ const MobileNav: React.FC<MobileNavProps> = ({ currentView, onNavigate }) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Cleanup listener on unmount or when drawer closes
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [isOpen]);
+
+  // Inform parent about drawer open state
+  useEffect(() => {
+    if (onDrawerToggle) {
+      onDrawerToggle(isOpen);
+    }
+  }, [isOpen, onDrawerToggle]);
 
   const navItems = [
     { id: 'home' as ViewState, label: 'Home', icon: Home },
@@ -75,6 +102,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ currentView, onNavigate }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={drawerRef}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
