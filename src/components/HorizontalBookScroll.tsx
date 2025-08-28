@@ -3,26 +3,21 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Book } from '../types/book';
 import { Button } from './ui/button';
-import { useMobileNav } from './MobileNav'; // updated correct path here
-
 interface HorizontalBookScrollProps {
   title: string;
   books: Book[];
   onBookSelect: (book: Book) => void;
   className?: string;
 }
-
-const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
-  title,
-  books,
+const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({ 
+  title, 
+  books, 
   onBookSelect,
-  className = "",
+  className = ""
 }) => {
-  const { isMobileMenuOpen } = useMobileNav();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
-
   const checkScrollButtons = () => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
@@ -30,38 +25,34 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
     }
   };
-
   useEffect(() => {
     checkScrollButtons();
     const scrollElement = scrollRef.current;
     if (scrollElement) {
       scrollElement.addEventListener('scroll', checkScrollButtons);
       window.addEventListener('resize', checkScrollButtons);
-
+      
       return () => {
         scrollElement.removeEventListener('scroll', checkScrollButtons);
         window.removeEventListener('resize', checkScrollButtons);
       };
     }
   }, [books]);
-
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const scrollAmount = scrollRef.current.clientWidth * 0.8;
       scrollRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
+        behavior: 'smooth'
       });
     }
   };
-
   if (books.length === 0) return null;
-
   return (
     <section className={`mb-12 ${className}`}>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-foreground">{title}</h2>
-
+        
         {/* Desktop Arrow Controls */}
         <div className="hidden md:flex gap-2">
           <Button
@@ -85,8 +76,8 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
         </div>
       </div>
       <div className="relative">
-        {/* Mobile Arrow Controls - hide completely when mobile menu is open */}
-        {canScrollLeft && !isMobileMenuOpen && (
+        {/* Mobile Arrow Controls */}
+        {canScrollLeft && (
           <Button
             variant="outline"
             size="sm"
@@ -96,8 +87,8 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
             <ChevronLeft className="h-4 w-4" />
           </Button>
         )}
-
-        {canScrollRight && !isMobileMenuOpen && (
+        
+        {canScrollRight && (
           <Button
             variant="outline"
             size="sm"
@@ -107,7 +98,6 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
             <ChevronRight className="h-4 w-4" />
           </Button>
         )}
-
         {/* Scrollable Book Container */}
         <div
           ref={scrollRef}
@@ -145,5 +135,4 @@ const HorizontalBookScroll: React.FC<HorizontalBookScrollProps> = ({
     </section>
   );
 };
-
 export default HorizontalBookScroll;
