@@ -7,6 +7,7 @@ import { Button } from './ui/button';
 import { useToast } from '../hooks/use-toast';
 import { localStorage } from '../utils/localStorage';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
+import { useIsMobile } from '../hooks/use-mobile';
 
 interface BookReaderProps {
   book: Book;
@@ -16,6 +17,7 @@ interface BookReaderProps {
 export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
   const { dispatch } = useBooks();
   const { toast } = useToast();
+  const isMobile = useIsMobile();
   const [currentLanguage, setCurrentLanguage] = useState<Language>('english');
   const [isFlipping, setIsFlipping] = useState(false);
   const [isLanguagePopoverOpen, setIsLanguagePopoverOpen] = useState(false);
@@ -317,7 +319,8 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
-          /* Navigation hints */}
+
+          {/* ✅ Navigation hints with mobile fix */}
           <div className="text-center mt-4 text-sm text-muted-foreground">
             {isMobile ? 'Use swipe gestures to navigate' : 'Use arrow keys to navigate • ESC to close'}
           </div>
