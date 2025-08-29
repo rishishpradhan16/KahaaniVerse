@@ -298,6 +298,36 @@ const Index = () => {
                 books={getBooksByCategory('Horror')}
                 onBookSelect={handleBookSelect}
               />
+              <HorizontalBookScroll 
+                title="Romance" 
+                books={getBooksByCategory('Romance')} 
+                onBookSelect={handleBookSelect} 
+              />
+              <HorizontalBookScroll 
+                title="Sci-Fi" 
+                books={getBooksByCategory('Sci-Fi')} 
+                onBookSelect={handleBookSelect} 
+              />
+              <HorizontalBookScroll 
+                title="Fantasy" 
+                books={getBooksByCategory('Fantasy')} 
+                onBookSelect={handleBookSelect} 
+              />
+              <HorizontalBookScroll 
+                title="Short Stories" 
+                books={getBooksByCategory('Short Stories')} 
+                onBookSelect={handleBookSelect} 
+              />
+              <HorizontalBookScroll 
+                title="Drama / Philosophy" 
+                books={getBooksByCategory('Drama / Philosophy')} 
+                onBookSelect={handleBookSelect} 
+              />
+              <HorizontalBookScroll 
+                title="True Crime / Realistic Fiction" 
+                books={getBooksByCategory('True Crime / Realistic Fiction')} 
+                onBookSelect={handleBookSelect} 
+              />
             </div>
           </div>
         );
