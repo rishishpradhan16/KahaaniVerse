@@ -641,5 +641,637 @@ Music begin hua, aur jaise hi usne use apni arms mein pull kiya, Isabella jaanti
         ]
       }
     }
+  },
+  {
+    id: '4',
+    title: 'Hearts in Harmony',
+    author: 'Isabella Rose',
+    cover: book1Cover,
+    description: 'A sweeping romance about two souls finding love against all odds.',
+    genre: 'Romance',
+    pages: [
+      {
+        id: 'page-4-1',
+        pageNumber: 1,
+        content: `Chapter 1: First Encounter
+
+The coffee shop was bustling with the morning rush when Emma accidentally collided with a stranger, sending her latte splashing across his crisp white shirt.
+
+"Oh my god, I'm so sorry!" she exclaimed, frantically grabbing napkins.
+
+He looked up with the most striking green eyes she'd ever seen, and instead of anger, there was only amusement. "Well, that's certainly one way to make an impression," he said with a warm smile.
+
+"Let me pay for your dry cleaning—or buy you a new shirt—or both!" Emma stammered, her cheeks burning with embarrassment.
+
+"How about you just let me buy you another coffee instead?" he suggested, extending his hand. "I'm Alex."
+
+"Emma," she replied, shaking his hand and feeling an unexpected spark at the contact.
+
+Little did she know, this chance encounter would change her life forever.`
+      }
+    ],
+    languages: {
+      english: {
+        title: 'Hearts in Harmony',
+        description: 'A sweeping romance about two souls finding love against all odds.',
+        pages: [
+          {
+            id: 'page-4-1',
+            pageNumber: 1,
+            content: `Chapter 1: First Encounter
+
+The coffee shop was bustling with the morning rush when Emma accidentally collided with a stranger, sending her latte splashing across his crisp white shirt.
+
+"Oh my god, I'm so sorry!" she exclaimed, frantically grabbing napkins.
+
+He looked up with the most striking green eyes she'd ever seen, and instead of anger, there was only amusement. "Well, that's certainly one way to make an impression," he said with a warm smile.
+
+"Let me pay for your dry cleaning—or buy you a new shirt—or both!" Emma stammered, her cheeks burning with embarrassment.
+
+"How about you just let me buy you another coffee instead?" he suggested, extending his hand. "I'm Alex."
+
+"Emma," she replied, shaking his hand and feeling an unexpected spark at the contact.
+
+Little did she know, this chance encounter would change her life forever.`
+          }
+        ]
+      },
+      hindi: {
+        title: 'दिलों का संगम',
+        description: 'एक व्यापक रोमांस कहानी दो आत्माओं के बारे में जो सभी बाधाओं के खिलाफ प्रेम पाते हैं।',
+        pages: [
+          {
+            id: 'page-4-1-hi',
+            pageNumber: 1,
+            content: `अध्याय 1: पहली मुलाकात
+
+कॉफी शॉप सुबह की भीड़ से गुलजार था जब एम्मा गलती से एक अजनबी से टकरा गई। उसका लट्टे उसकी साफ सफेद शर्ट पर गिर गया।
+
+"हे भगवान, मुझे बहुत खुशी है!" उसने चिल्लाते हुए नैपकिन पकड़े।
+
+उसने सबसे आकर्षक हरी आंखों के साथ देखा, और गुस्से के बजाय केवल मनोरंजन था।
+
+"मुझे आपकी ड्राई क्लीनिंग के लिए भुगतान करने दें!" एम्मा ने हकलाते हुए कहा।
+
+"बल्कि मुझे आपके लिए एक और कॉफी खरीदने दें," उसने सुझाव दिया। "मैं एलेक्स हूं।"
+
+"एम्मा," उसने जवाब दिया। यह मुलाकात उसका जीवन हमेशा के लिए बदल देगी।`
+          }
+        ]
+      },
+      hinglish: {
+        title: 'Hearts ka Harmony',
+        description: 'Ek sweeping romance story do souls ke baare mein jo love paate hain against all odds.',
+        pages: [
+          {
+            id: 'page-4-1-hn',
+            pageNumber: 1,
+            content: `Chapter 1: Pehli Mulakat
+
+Coffee shop morning rush se busy tha jab Emma accidentally ek stranger se collide ho gayi, uska latte uski crisp white shirt par splash ho gaya.
+
+"Oh my god, I'm so sorry!" usne exclaim kiya, frantically napkins grab karte hue.
+
+Usne sabse striking green eyes ke saath look up kiya, aur anger ki bajaye sirf amusement tha. "Well, that's certainly one way to impression banana," usne warm smile ke saath kaha.
+
+"Mujhe aapki dry cleaning pay karne do!" Emma stammered, cheeks burning with embarrassment.
+
+"How about aap mujhe ek aur coffee buy karne do instead?" usne suggest kiya. "Main Alex hun."
+
+"Emma," usne reply kiya. Yeh chance encounter uski life forever change kar dega.`
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: '5',
+    title: 'Galactic Odyssey',
+    author: 'Captain Stellar Nova',
+    cover: book2Cover,
+    description: 'An epic space adventure across distant galaxies and alien worlds.',
+    genre: 'Sci-Fi',
+    pages: [
+      {
+        id: 'page-5-1',
+        pageNumber: 1,
+        content: `Chapter 1: The Last Transmission
+
+Commander Sarah Chen stood on the bridge of the starship Prometheus, staring into the vast emptiness of space. Three months had passed since they'd received the last transmission from Earth, and the silence was deafening.
+
+"Commander," her first officer called out, "we're detecting an anomalous energy signature in sector 7-G. It's unlike anything in our databases."
+
+Sarah's pulse quickened. In the depths of space, anything unusual could mean salvation or destruction. "Set course for the anomaly. Maximum warp."
+
+As the ship lurched forward, reality seemed to bend around them. Stars streaked past like silver threads, and then suddenly, they emerged into a solar system that defied all known laws of physics.
+
+Three suns orbited each other in perfect harmony, their light painting the cosmic landscape in impossible colors. And there, nestled between the orbital paths, was a planet that pulsed with bioluminescent energy.
+
+"Commander," the science officer whispered in awe, "that planet... it's alive."
+
+The greatest discovery in human history was about to begin.`
+      }
+    ],
+    languages: {
+      english: {
+        title: 'Galactic Odyssey',
+        description: 'An epic space adventure across distant galaxies and alien worlds.',
+        pages: [
+          {
+            id: 'page-5-1',
+            pageNumber: 1,
+            content: `Chapter 1: The Last Transmission
+
+Commander Sarah Chen stood on the bridge of the starship Prometheus, staring into the vast emptiness of space. Three months had passed since they'd received the last transmission from Earth, and the silence was deafening.
+
+"Commander," her first officer called out, "we're detecting an anomalous energy signature in sector 7-G. It's unlike anything in our databases."
+
+Sarah's pulse quickened. In the depths of space, anything unusual could mean salvation or destruction. "Set course for the anomaly. Maximum warp."
+
+As the ship lurched forward, reality seemed to bend around them. Stars streaked past like silver threads, and then suddenly, they emerged into a solar system that defied all known laws of physics.
+
+Three suns orbited each other in perfect harmony, their light painting the cosmic landscape in impossible colors. And there, nestled between the orbital paths, was a planet that pulsed with bioluminescent energy.
+
+"Commander," the science officer whispered in awe, "that planet... it's alive."
+
+The greatest discovery in human history was about to begin.`
+          }
+        ]
+      },
+      hindi: {
+        title: 'गैलेक्टिक ओडिसी',
+        description: 'दूर की आकाशगंगाओं और विदेशी दुनिया में एक महाकाव्य अंतरिक्ष साहसिक।',
+        pages: [
+          {
+            id: 'page-5-1-hi',
+            pageNumber: 1,
+            content: `अध्याय 1: अंतिम प्रसारण
+
+कमांडर सारा चेन स्टारशिप प्रोमेथियस के पुल पर खड़ी थी, अंतरिक्ष की विशाल खालीपन में घूर रही थी। तीन महीने बीत गए थे जब से उन्होंने पृथ्वी से अंतिम प्रसारण प्राप्त किया था।
+
+"कमांडर," उसके पहले अधिकारी ने बुलाया, "हम सेक्टर 7-जी में एक असामान्य ऊर्जा हस्ताक्षर का पता लगा रहे हैं।"
+
+सारा की नब्ज तेज हो गई। अंतरिक्ष की गहराई में, कुछ भी असामान्य का मतलब मुक्ति या विनाश हो सकता है।
+
+जैसे ही जहाज आगे बढ़ा, वास्तविकता उनके चारों ओर मुड़ती दिख रही थी। तारे चांदी के धागों की तरह गुजरे।
+
+इंसानी इतिहास की सबसे बड़ी खोज शुरू होने वाली थी।`
+          }
+        ]
+      },
+      hinglish: {
+        title: 'Galactic Odyssey',
+        description: 'Ek epic space adventure distant galaxies aur alien worlds ke across.',
+        pages: [
+          {
+            id: 'page-5-1-hn',
+            pageNumber: 1,
+            content: `Chapter 1: Last Transmission
+
+Commander Sarah Chen starship Prometheus ke bridge par khadi thi, space ki vast emptiness mein stare kar rahi thi. Teen months pass ho gaye the jab se unhone Earth se last transmission receive kiya tha.
+
+"Commander," uske first officer ne call out kiya, "hum sector 7-G mein ek anomalous energy signature detect kar rahe hain."
+
+Sarah ka pulse quicken ho gaya. Space ki depths mein, kuch bhi unusual ka matlab salvation ya destruction ho sakta hai.
+
+Jaise hi ship forward lurched, reality unke around bend hoti dikh rahi thi. Stars silver threads ki tarah streak karte hue pass hue.
+
+Human history ki greatest discovery shuru hone wali thi.`
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: '6',
+    title: 'The Dragon\'s Quest',
+    author: 'Lyra Stormweaver',
+    cover: book3Cover,
+    description: 'A fantasy epic about dragons, magic, and ancient prophecies.',
+    genre: 'Fantasy',
+    pages: [
+      {
+        id: 'page-6-1',
+        pageNumber: 1,
+        content: `Chapter 1: The Awakening of Flames
+
+The ancient egg had been waiting for a thousand years, hidden deep within the Crystal Caverns of Mount Eternus. When young Thalia accidentally touched its crystalline surface, she felt a spark of recognition that went beyond mere curiosity.
+
+The egg began to crack, revealing veins of golden light that pulsed like a heartbeat. With each pulse, the cavern walls resonated with an ancient magic that had been dormant for centuries.
+
+"By the Ancient Ones," whispered Elder Morvain, who had followed Thalia into the forbidden depths. "The prophecy speaks true. The Last Dragon shall rise when the Chosen One appears."
+
+A magnificent dragon emerged from the shell—not the size of a horse as legends suggested, but small enough to curl around Thalia's wrist like a living bracelet. Its scales shimmered with all the colors of sunset, and its eyes held the wisdom of ages.
+
+"I am Pyrion," the dragon spoke directly into her mind. "And you, young one, are my destined partner. Together, we must restore the balance between the realms of magic and mortals."
+
+Thalia's ordinary life as a village apprentice was about to become an extraordinary adventure.`
+      }
+    ],
+    languages: {
+      english: {
+        title: 'The Dragon\'s Quest',
+        description: 'A fantasy epic about dragons, magic, and ancient prophecies.',
+        pages: [
+          {
+            id: 'page-6-1',
+            pageNumber: 1,
+            content: `Chapter 1: The Awakening of Flames
+
+The ancient egg had been waiting for a thousand years, hidden deep within the Crystal Caverns of Mount Eternus. When young Thalia accidentally touched its crystalline surface, she felt a spark of recognition that went beyond mere curiosity.
+
+The egg began to crack, revealing veins of golden light that pulsed like a heartbeat. With each pulse, the cavern walls resonated with an ancient magic that had been dormant for centuries.
+
+"By the Ancient Ones," whispered Elder Morvain, who had followed Thalia into the forbidden depths. "The prophecy speaks true. The Last Dragon shall rise when the Chosen One appears."
+
+A magnificent dragon emerged from the shell—not the size of a horse as legends suggested, but small enough to curl around Thalia's wrist like a living bracelet. Its scales shimmered with all the colors of sunset, and its eyes held the wisdom of ages.
+
+"I am Pyrion," the dragon spoke directly into her mind. "And you, young one, are my destined partner. Together, we must restore the balance between the realms of magic and mortals."
+
+Thalia's ordinary life as a village apprentice was about to become an extraordinary adventure.`
+          }
+        ]
+      },
+      hindi: {
+        title: 'ड्रैगन की खोज',
+        description: 'ड्रैगन, जादू और प्राचीन भविष्यवाणियों के बारे में एक फंतासी महाकाव्य।',
+        pages: [
+          {
+            id: 'page-6-1-hi',
+            pageNumber: 1,
+            content: `अध्याय 1: आग का जागरण
+
+प्राचीन अंडा हजार साल से प्रतीक्षा कर रहा था, माउंट एटर्नस की क्रिस्टल गुफाओं में गहरे छुपा हुआ। जब युवा थालिया ने गलती से इसकी क्रिस्टलीय सतह को छुआ, तो उसने पहचान की एक चिंगारी महसूस की।
+
+अंडा फटने लगा, सुनहरी रोशनी की नसों को प्रकट करता हुआ जो दिल की धड़कन की तरह स्पंदित करती था।
+
+"प्राचीन लोगों के द्वारा," एल्डर मोर्वेन ने फुसफुसाया। "भविष्यवाणी सच कहती है। अंतिम ड्रैगन उठेगा जब चुना हुआ व्यक्ति दिखाई देगा।"
+
+एक शानदार ड्रैगन खोल से निकला—घोड़े के आकार का नहीं बल्कि इतना छोटा कि थालिया की कलाई के चारों ओर घूम सके।
+
+"मैं पायरियन हूं," ड्रैगन ने सीधे उसके मन में बात की। "और तुम मेरे नियत साथी हो।"
+
+थालिया का गांव की शिक्षुता का साधारण जीवन एक असाधारण साहसिक बनने वाला था।`
+          }
+        ]
+      },
+      hinglish: {
+        title: 'Dragon ki Quest',
+        description: 'Ek fantasy epic dragons, magic aur ancient prophecies ke baare mein.',
+        pages: [
+          {
+            id: 'page-6-1-hn',
+            pageNumber: 1,
+            content: `Chapter 1: Flames ka Awakening
+
+Ancient egg thousand years se wait kar raha tha, Mount Eternus ki Crystal Caverns mein deep hidden. Jab young Thalia ne accidentally iske crystalline surface ko touch kiya, usne recognition ki spark feel ki.
+
+Egg crack hone laga, golden light ki veins reveal karte hue jo heartbeat ki tarah pulse kar rahi thi.
+
+"By the Ancient Ones," Elder Morvain ne whisper kiya. "Prophecy speaks true. Last Dragon rise karega jab Chosen One appear hoga."
+
+Ek magnificent dragon shell se emerge hua—horse ke size ka nahi balki itna small ki Thalia ki wrist ke around curl kar sake.
+
+"Main Pyrion hun," dragon ne directly uske mind mein baat ki. "Aur tum meri destined partner ho."
+
+Thalia ki village apprentice ki ordinary life ek extraordinary adventure banne wali thi.`
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: '7',
+    title: 'Midnight Tales',
+    author: 'E.A. Whisper',
+    cover: book1Cover,
+    description: 'A collection of haunting short stories that linger in the mind.',
+    genre: 'Short Stories',
+    pages: [
+      {
+        id: 'page-7-1',
+        pageNumber: 1,
+        content: `The Music Box
+
+Clara found the music box in her grandmother's attic, dusty and forgotten among old photographs and yellowed letters. When she wound the tiny key, a delicate ballerina began to dance to a melancholy tune she'd never heard before.
+
+That night, she dreamed of dancing in an endless ballroom, her feet never touching the ground, spinning eternally to the same haunting melody.
+
+When she woke, the music box was playing on her nightstand, though she was certain she'd left it downstairs.
+
+---
+
+The Last Letter
+
+Thomas had been dead for three years when his wife received his final letter. The postmark was from yesterday, the handwriting unmistakably his. Inside was a single sentence: "Wait for me at our special place."
+
+She knew exactly where he meant—the old oak tree where they'd carved their initials forty years ago.
+
+When she arrived at sunset, she found fresh carving in the bark: "Thank you for waiting. I love you always."
+
+She was alone, but somehow, not lonely anymore.`
+      }
+    ],
+    languages: {
+      english: {
+        title: 'Midnight Tales',
+        description: 'A collection of haunting short stories that linger in the mind.',
+        pages: [
+          {
+            id: 'page-7-1',
+            pageNumber: 1,
+            content: `The Music Box
+
+Clara found the music box in her grandmother's attic, dusty and forgotten among old photographs and yellowed letters. When she wound the tiny key, a delicate ballerina began to dance to a melancholy tune she'd never heard before.
+
+That night, she dreamed of dancing in an endless ballroom, her feet never touching the ground, spinning eternally to the same haunting melody.
+
+When she woke, the music box was playing on her nightstand, though she was certain she'd left it downstairs.
+
+---
+
+The Last Letter
+
+Thomas had been dead for three years when his wife received his final letter. The postmark was from yesterday, the handwriting unmistakably his. Inside was a single sentence: "Wait for me at our special place."
+
+She knew exactly where he meant—the old oak tree where they'd carved their initials forty years ago.
+
+When she arrived at sunset, she found fresh carving in the bark: "Thank you for waiting. I love you always."
+
+She was alone, but somehow, not lonely anymore.`
+          }
+        ]
+      },
+      hindi: {
+        title: 'मध्यरात्रि की कहानियां',
+        description: 'डरावनी छोटी कहानियों का एक संग्रह जो मन में बना रहता है।',
+        pages: [
+          {
+            id: 'page-7-1-hi',
+            pageNumber: 1,
+            content: `संगीत बॉक्स
+
+क्लारा ने अपनी दादी के अटारी में संगीत बॉक्स पाया, पुरानी तस्वीरों और पीले पत्रों के बीच धूल भरा और भुला दिया गया। जब उसने छोटी चाबी घुमाई, तो एक नाजुक बैलेरिना एक उदास धुन पर नृत्य करने लगी।
+
+उस रात, उसने एक अंतहीन बॉलरूम में नृत्य करने का सपना देखा।
+
+जब वह जागी, तो संगीत बॉक्स उसकी नाइटस्टैंड पर बज रहा था।
+
+---
+
+अंतिम पत्र
+
+थॉमस को मरे तीन साल हो गए थे जब उसकी पत्नी को उसका अंतिम पत्र मिला। अंदर एक वाक्य था: "हमारी विशेष जगह पर मेरा इंतजार करो।"
+
+वह जानती थी कि उसका मतलब कहां था—पुराना ओक का पेड़ जहां उन्होंने चालीस साल पहले अपने नाम खुदवाए थे।
+
+वह अकेली थी, लेकिन किसी तरह अब अकेली नहीं थी।`
+          }
+        ]
+      },
+      hinglish: {
+        title: 'Midnight ki Tales',
+        description: 'Haunting short stories ka ek collection jo mind mein linger karte hain.',
+        pages: [
+          {
+            id: 'page-7-1-hn',
+            pageNumber: 1,
+            content: `Music Box
+
+Clara ne apni grandmother ke attic mein music box find kiya, dusty aur forgotten old photographs aur yellowed letters ke beech. Jab usne tiny key wound ki, ek delicate ballerina melancholy tune par dance karne lagi.
+
+Us raat, usne endless ballroom mein dancing ka dream dekha.
+
+Jab woh woke up, music box uski nightstand par play kar raha tha.
+
+---
+
+Last Letter
+
+Thomas ko mare teen years ho gaye the jab uski wife ko uska final letter mila. Inside ek sentence tha: "Hamari special place par mera wait karo."
+
+Woh exactly janti thi uska matlab kahan tha—old oak tree jahan unhone apne initials forty years ago carve kiye the.
+
+Woh alone thi, lekin somehow ab lonely nahi thi.`
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: '8',
+    title: 'Echoes of Truth',
+    author: 'Dr. Margaret Wise',
+    cover: book2Cover,
+    description: 'A philosophical exploration of existence, consciousness, and human nature.',
+    genre: 'Drama / Philosophy',
+    pages: [
+      {
+        id: 'page-8-1',
+        pageNumber: 1,
+        content: `Chapter 1: The Question of Being
+
+Professor James Hartwell stood before his philosophy class, chalk in hand, facing the eternal question that had plagued humanity since the dawn of consciousness: What does it mean to truly exist?
+
+"Consider this," he began, writing on the blackboard. "You wake up every morning, go about your daily routine, interact with others, make decisions. But are you truly living, or merely existing?"
+
+A student raised her hand. "Professor, isn't that the same thing?"
+
+James smiled—the same question he'd asked his own professor thirty years ago. "Sarah, imagine a tree in a forest. It grows, it responds to its environment, it reproduces. But does it contemplate its existence? Does it question its purpose?"
+
+The classroom fell silent. Outside, the autumn leaves danced in the wind, seemingly without purpose, yet somehow perfectly in tune with the universe.
+
+"The difference between existing and living," James continued, "lies not in our actions, but in our awareness of those actions. In our ability to question, to doubt, to wonder why we are here at all."
+
+But as he spoke these words, James couldn't shake the feeling that someone—or something—was questioning his own existence.`
+      }
+    ],
+    languages: {
+      english: {
+        title: 'Echoes of Truth',
+        description: 'A philosophical exploration of existence, consciousness, and human nature.',
+        pages: [
+          {
+            id: 'page-8-1',
+            pageNumber: 1,
+            content: `Chapter 1: The Question of Being
+
+Professor James Hartwell stood before his philosophy class, chalk in hand, facing the eternal question that had plagued humanity since the dawn of consciousness: What does it mean to truly exist?
+
+"Consider this," he began, writing on the blackboard. "You wake up every morning, go about your daily routine, interact with others, make decisions. But are you truly living, or merely existing?"
+
+A student raised her hand. "Professor, isn't that the same thing?"
+
+James smiled—the same question he'd asked his own professor thirty years ago. "Sarah, imagine a tree in a forest. It grows, it responds to its environment, it reproduces. But does it contemplate its existence? Does it question its purpose?"
+
+The classroom fell silent. Outside, the autumn leaves danced in the wind, seemingly without purpose, yet somehow perfectly in tune with the universe.
+
+"The difference between existing and living," James continued, "lies not in our actions, but in our awareness of those actions. In our ability to question, to doubt, to wonder why we are here at all."
+
+But as he spoke these words, James couldn't shake the feeling that someone—or something—was questioning his own existence.`
+          }
+        ]
+      },
+      hindi: {
+        title: 'सत्य की प्रतिध्वनि',
+        description: 'अस्तित्व, चेतना और मानव प्रकृति की एक दार्शनिक खोज।',
+        pages: [
+          {
+            id: 'page-8-1-hi',
+            pageNumber: 1,
+            content: `अध्याय 1: अस्तित्व का प्रश्न
+
+प्रोफेसर जेम्स हार्टवेल अपनी दर्शनशास्त्र कक्षा के सामने खड़े थे, हाथ में चाक, उस शाश्वत प्रश्न का सामना करते हुए जिसने चेतना की शुरुआत से ही मानवता को परेशान किया है: वास्तव में अस्तित्व का क्या मतलब है?
+
+"इस पर विचार करें," उन्होंने ब्लैकबोर्ड पर लिखते हुए शुरुआत की। "आप हर सुबह उठते हैं, अपनी दैनिक दिनचर्या के बारे में जाते हैं। लेकिन क्या आप वास्तव में जी रहे हैं, या केवल अस्तित्व में हैं?"
+
+एक छात्रा ने हाथ उठाया। "प्रोफेसर, क्या यह एक ही बात नहीं है?"
+
+जेम्स मुस्कराए—वही प्रश्न जो उन्होंने तीस साल पहले अपने प्रोफेसर से पूछा था।
+
+"अस्तित्व और जीवन के बीच का अंतर हमारे कार्यों में नहीं, बल्कि उन कार्यों के बारे में हमारी जागरूकता में निहित है।"
+
+लेकिन जैसे ही उन्होंने ये शब्द कहे, जेम्स इस भावना को हिला नहीं सके कि कोई उनके अपने अस्तित्व पर सवाल उठा रहा था।`
+          }
+        ]
+      },
+      hinglish: {
+        title: 'Truth ki Echoes',
+        description: 'Existence, consciousness aur human nature ki ek philosophical exploration.',
+        pages: [
+          {
+            id: 'page-8-1-hn',
+            pageNumber: 1,
+            content: `Chapter 1: Being ka Question
+
+Professor James Hartwell apni philosophy class ke saamne khade the, haath mein chalk, us eternal question ka face karte hue jo humanity ko dawn of consciousness se plague kar raha hai: truly exist karne ka kya matlab hai?
+
+"Yeh consider karo," unhone blackboard par likhte hue start kiya. "Aap har morning wake up karte hain, daily routine follow karte hain. Lekin kya aap truly living hain, ya merely existing?"
+
+Ek student ne hand raise kiya. "Professor, kya yeh same cheez nahi hai?"
+
+James smile kiye—wahi question jo unhone apne professor se thirty years ago pucha tha.
+
+"Existing aur living ke beech ka difference hamare actions mein nahi, balki un actions ki awareness mein hai."
+
+Lekin jaise hi unhone ye words kehe, James yeh feeling shake nahi kar sake ki koi unke apne existence ko question kar raha tha.`
+          }
+        ]
+      }
+    }
+  },
+  {
+    id: '9',
+    title: 'The Silent Witness',
+    author: 'Detective Maria Santos',
+    cover: book3Cover,
+    description: 'A gripping true crime investigation into a case that shocked a nation.',
+    genre: 'True Crime / Realistic Fiction',
+    pages: [
+      {
+        id: 'page-9-1',
+        pageNumber: 1,
+        content: `Chapter 1: The Call
+
+It was 3:47 AM when Detective Maria Santos received the call that would haunt her for the rest of her career. The voice on the other end was shaky, barely coherent.
+
+"There's... there's been a murder. The Riverside Mall. Security guard found the body."
+
+Maria had seen her share of crime scenes in fifteen years on the force, but nothing could have prepared her for what she discovered that cold October morning.
+
+The victim was Jennifer Walsh, 28, a local teacher beloved by her students and community. She was found in the employee parking garage, her car still running, purse untouched. No signs of robbery, no obvious motive.
+
+But what made this case different wasn't just the lack of evidence—it was what they found in the security footage. For exactly four minutes and thirty-seven seconds, the cameras showed Jennifer standing alone by her car, talking animatedly to someone who wasn't there.
+
+Or rather, someone the cameras couldn't see.
+
+"Santos," her partner Detective Reynolds called out, holding up a evidence bag. "You need to see this."
+
+Inside was a single white rose with a note attached: "She finally listened."
+
+The case that would consume the next two years of Maria's life had just begun.`
+      }
+    ],
+    languages: {
+      english: {
+        title: 'The Silent Witness',
+        description: 'A gripping true crime investigation into a case that shocked a nation.',
+        pages: [
+          {
+            id: 'page-9-1',
+            pageNumber: 1,
+            content: `Chapter 1: The Call
+
+It was 3:47 AM when Detective Maria Santos received the call that would haunt her for the rest of her career. The voice on the other end was shaky, barely coherent.
+
+"There's... there's been a murder. The Riverside Mall. Security guard found the body."
+
+Maria had seen her share of crime scenes in fifteen years on the force, but nothing could have prepared her for what she discovered that cold October morning.
+
+The victim was Jennifer Walsh, 28, a local teacher beloved by her students and community. She was found in the employee parking garage, her car still running, purse untouched. No signs of robbery, no obvious motive.
+
+But what made this case different wasn't just the lack of evidence—it was what they found in the security footage. For exactly four minutes and thirty-seven seconds, the cameras showed Jennifer standing alone by her car, talking animatedly to someone who wasn't there.
+
+Or rather, someone the cameras couldn't see.
+
+"Santos," her partner Detective Reynolds called out, holding up a evidence bag. "You need to see this."
+
+Inside was a single white rose with a note attached: "She finally listened."
+
+The case that would consume the next two years of Maria's life had just begun.`
+          }
+        ]
+      },
+      hindi: {
+        title: 'मूक गवाह',
+        description: 'एक रोमांचक सच्चे अपराध की जांच जिसने एक राष्ट्र को हिला दिया।',
+        pages: [
+          {
+            id: 'page-9-1-hi',
+            pageNumber: 1,
+            content: `अध्याय 1: कॉल
+
+रात के 3:47 बजे जब जासूस मारिया सैंटोस को वह कॉल आई जो उसे अपने बाकी करियर के लिए परेशान करेगी। दूसरी तरफ आवाज कांपती हुई, मुश्किल से सुसंगत थी।
+
+"एक... एक हत्या हुई है। रिवरसाइड मॉल। सिक्यूरिटी गार्ड को शव मिला।"
+
+मारिया ने पंद्रह सालों में अपराध के दृश्य देखे थे, लेकिन उस ठंडी अक्टूबर की सुबह जो उसने खोजा उसके लिए कुछ भी उसे तैयार नहीं कर सकता था।
+
+पीड़िता जेनिफर वॉल्श, 28, एक स्थानीय शिक्षक थी जो अपने छात्रों और समुदाय द्वारा प्रिय थी। वह कर्मचारी पार्किंग गैराज में मिली, उसकी कार अभी भी चल रही थी।
+
+लेकिन जो इस मामले को अलग बनाता था वह सिर्फ सबूतों की कमी नहीं थी—यह वह था जो उन्होंने सुरक्षा फुटेज में पाया।
+
+चार मिनट और सैंतीस सेकंड के लिए, कैमरों ने जेनिफर को अकेले अपनी कार के पास खड़े दिखाया।
+
+मारिया के जीवन के अगले दो साल खाने वाला मामला अभी शुरू हुआ था।`
+          }
+        ]
+      },
+      hinglish: {
+        title: 'Silent Witness',
+        description: 'Ek gripping true crime investigation jo ek nation ko shock kar gaya.',
+        pages: [
+          {
+            id: 'page-9-1-hn',
+            pageNumber: 1,
+            content: `Chapter 1: The Call
+
+3:47 AM tha jab Detective Maria Santos ko woh call aayi jo usse apne baaki career ke liye haunt karegi. Dusri taraf voice shaky thi, barely coherent.
+
+"There's... ek murder hua hai. Riverside Mall. Security guard ko body mili."
+
+Maria ne fifteen years mein crime scenes dekhe the, lekin kuch bhi usse us cold October morning ke liye prepare nahi kar sakta tha.
+
+Victim Jennifer Walsh, 28, ek local teacher thi jo apne students aur community ki beloved thi. Woh employee parking garage mein mili, uski car abhi bhi running thi.
+
+Lekin jo is case ko different banata tha woh sirf evidence ki lack nahi thi—yeh woh tha jo unhone security footage mein find kiya.
+
+Exactly four minutes aur thirty-seven seconds ke liye, cameras ne Jennifer ko akele apni car ke paas khade dikhaaya.
+
+Maria ki life ke next two years consume karne wala case abhi start hua tha.`
+          }
+        ]
+      }
+    }
   }
 ];
