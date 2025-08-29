@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Home, Bookmark, Clock, Library, Grid3X3 } from 'lucide-react';
 import { Button } from './ui/button';
+import { useMobileNav } from '../context/MobileNavContext';
 
 type ViewState = 'home' | 'book-cover' | 'reading' | 'bookmarks' | 'latest' | 'library' | 'categories';
 
@@ -12,8 +13,21 @@ interface MobileNavProps {
 }
 
 const MobileNav: React.FC<MobileNavProps> = ({ currentView, onNavigate, onDrawerToggle }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isMobileMenuOpen, setIsMobileMenuOpen } = useMobileNav();
+  const [isOpen, setIsOpen] = useState(isMobileMenuOpen);
   const drawerRef = useRef<HTMLDivElement>(null);
+
+  // Sync with global context whenever local state changes
+  useEffect(() => {
+    setIsMobileMenuOpen(isOpen);
+  }, [isOpen, setIsMobileMenuOpen]);
+
+  // Keep local state in sync if context changes externally
+  useEffect(() => {
+    if (isMobileMenuOpen !== isOpen) {
+      setIsOpen(isMobileMenuOpen);
+    }
+  }, [isMobileMenuOpen]);
 
   // Close drawer on outside click
   useEffect(() => {
