@@ -317,8 +317,9 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
+          /* Navigation hints */}
           <div className="text-center mt-4 text-sm text-muted-foreground">
-            Use arrow keys to navigate • ESC to close
+            {isMobile ? 'Use swipe gestures to navigate' : 'Use arrow keys to navigate • ESC to close'}
           </div>
         </div>
       </div>
