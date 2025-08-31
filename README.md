@@ -37,7 +37,8 @@ public/
     "author": "Author Name", 
     "cover": "/assets/book1-cover.jpg",
     "description": "Book description...",
-    "genre": "Genre"
+    "genre": "Genre",
+    "isTrending": true
   }
 ]
 ```
@@ -81,12 +82,27 @@ public/assets/book5-cover.jpg
   "author": "Author Name",
   "cover": "/assets/book5-cover.jpg", 
   "description": "Book description...",
-  "genre": "Genre"
+  "genre": "Genre",
+  "isTrending": false
 }
 ```
 
 ### 3. Create Full Book File
 Create `public/books/book-5.json` with complete book data.
+
+### 4. Optional: Set Trending Status
+To make a book appear in "Trending Now" and "Latest Releases":
+```json
+{
+  "id": "5",
+  "title": "New Book",
+  "author": "Author Name",
+  "cover": "/assets/book5-cover.jpg", 
+  "description": "Book description...",
+  "genre": "Genre",
+  "isTrending": true
+}
+```
 
 **That's it!** The app automatically handles the rest.
 
@@ -112,6 +128,7 @@ interface BookMetadata {
   cover: string;
   description: string;
   genre: string;
+  isTrending?: boolean;
 }
 
 interface Book extends BookMetadata {
@@ -127,6 +144,7 @@ interface Book extends BookMetadata {
 - **Reading Progress**: Track where you left off
 - **Search Functionality**: Find books by title, author, genre
 - **Category Browsing**: Browse by genre
+- **Trending Books**: Dynamic trending section and latest releases
 - **Responsive Design**: Works on all devices
 - **Mobile Navigation**: Touch-friendly interface
 

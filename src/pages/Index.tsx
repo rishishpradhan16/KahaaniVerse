@@ -78,9 +78,13 @@ const Index = () => {
     return books.filter(book => bookmarkedBookIds.includes(book.id));
   };
 
+  const getTrendingBooks = () => {
+    return books.filter(book => book.isTrending === true);
+  };
+
   const getLatestBooks = () => {
-    // Sort by id (assuming higher id = newer book) since publishedDate doesn't exist
-    return [...books].sort((a, b) => parseInt(b.id) - parseInt(a.id));
+    // Use trending books for Latest Releases as per requirements
+    return getTrendingBooks();
   };
 
   const getLibraryBooks = () => {
@@ -317,7 +321,7 @@ const Index = () => {
             <div className="px-4 md:px-6">
               <HorizontalBookScroll
                 title="Trending Now"
-                books={books}
+                books={getTrendingBooks()}
                 onBookSelect={handleBookSelect}
               />
               <HorizontalBookScroll

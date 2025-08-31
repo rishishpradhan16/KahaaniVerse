@@ -5,6 +5,7 @@ export interface BookMetadata {
   cover: string;
   description: string;
   genre: string;
+  isTrending?: boolean;
 }
 
 export interface Book {

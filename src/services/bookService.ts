@@ -84,6 +84,11 @@ class BookService {
     );
   }
 
+  async getTrendingBooks(): Promise<BookMetadata[]> {
+    const metadata = await this.loadBookMetadata();
+    return metadata.filter(book => book.isTrending === true);
+  }
+
   getGenres(): string[] {
     const genres = new Set(this.bookMetadata.map(book => book.genre));
     return Array.from(genres).sort();

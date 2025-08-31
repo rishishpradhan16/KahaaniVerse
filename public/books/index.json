@@ -5,7 +5,8 @@
     "author": "Elena Mysticwind",
     "cover": "/assets/book1-cover.jpg",
     "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-    "genre": "Mystery Thriller"
+    "genre": "Mystery Thriller",
+    "isTrending": true
   },
   {
     "id": "2",
@@ -29,6 +30,7 @@
     "author": "Dr. Maya Patel",
     "cover": "/assets/book1-cover.jpg",
     "description": "A scientist discovers a garden where quantum physics and consciousness intertwine.",
-    "genre": "Sci-Fi"
+    "genre": "Sci-Fi",
+    "isTrending": true
   }
 ]
