@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Book } from '../types/book';
+import { Book, BookMetadata } from '../types/book';
 import { Button } from './ui/button';
 import { useMobileNav } from '../context/MobileNavContext';
 
 interface NetflixCarouselProps {
   title: string;
-  books: Book[];
-  onBookSelect: (book: Book) => void;
+  books: BookMetadata[];
+  onBookSelect: (book: BookMetadata) => void;
 }
 
 const NetflixCarousel: React.FC<NetflixCarouselProps> = ({ title, books, onBookSelect }) => {

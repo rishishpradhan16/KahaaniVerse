@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Book } from '../types/book';
+import { Book, BookMetadata } from '../types/book';
 
 interface CategoryBooksProps {
   title: string;
-  books: Book[];
-  onBookSelect: (book: Book) => void;
+  books: BookMetadata[];
+  onBookSelect: (book: BookMetadata) => void;
 }
 
 const CategoryBooks: React.FC<CategoryBooksProps> = ({ title, books, onBookSelect }) => {

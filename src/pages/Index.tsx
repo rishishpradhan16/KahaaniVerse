@@ -88,7 +88,7 @@ const Index = () => {
     const contextLibrary = state.readingProgress.map(progress => {
       const book = books.find(b => b.id === progress.bookId);
       return book || null;
-    }).filter(Boolean) as Book[];
+    }).filter(Boolean) as BookMetadata[];
 
     // Combine storage and context library, removing duplicates
     const allLibraryBookIds = new Set([

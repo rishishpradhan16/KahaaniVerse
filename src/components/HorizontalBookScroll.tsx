@@ -1,14 +1,14 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Book } from '../types/book';
+import { Book, BookMetadata } from '../types/book';
 import { Button } from './ui/button';
 import { useMobileNav } from '../context/MobileNavContext';
 
 interface HorizontalBookScrollProps {
   title: string;
-  books: Book[];
-  onBookSelect: (book: Book) => void;
+  books: BookMetadata[];
+  onBookSelect: (book: BookMetadata) => void;
   className?: string;
 }
 

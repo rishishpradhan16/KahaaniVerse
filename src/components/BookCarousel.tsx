@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Book } from '../types/book';
+import { Book, BookMetadata } from '../types/book';
 import { useBooks } from '../context/BookContext';
 
 interface BookCarouselProps {
-  books: Book[];
-  onBookSelect: (book: Book) => void;
+  books: BookMetadata[];
+  onBookSelect: (book: BookMetadata) => void;
 }
 
 export const BookCarousel: React.FC<BookCarouselProps> = ({ books, onBookSelect }) => {
