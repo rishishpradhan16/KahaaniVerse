@@ -1,0 +1,70 @@
+{
+  "id": "1",
+  "title": "The Enchanted Chronicles",
+  "author": "Elena Mysticwind",
+  "cover": "/assets/book1-cover.jpg",
+  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+  "genre": "Mystery Thriller",
+  "pages": [
+    {
+      "id": "page-1-1",
+      "pageNumber": 1,
+      "content": "Chapter 1: The Awakening\n\nThe mist rolled across the ancient forest like a living thing, carrying whispers of forgotten spells and long-lost secrets. Aria stood at the edge of the Whispering Woods, her heart pounding with a mixture of fear and excitement.\n\nFor eighteen years, she had lived in the village below, unaware of her true heritage. But tonight, as the blood moon rose high above the trees, everything would change.\n\nThe pendant around her neck began to glow with an ethereal light, responding to the magical energies that permeated the air. She could feel it calling to her—the ancient power that flowed through her veins, the legacy of the Mysticwind lineage.\n\n\"Remember what grandmother told you,\" she whispered to herself, clutching the pendant tighter. \"Trust in the magic, and it will guide you home.\"\n\nAs she stepped into the forest, the trees seemed to part before her, creating a path illuminated by floating orbs of silver light. Each step forward took her deeper into a world she never knew existed, where every shadow held a story and every whisper carried the weight of centuries.\n\nThe adventure of a lifetime was about to begin."
+    },
+    {
+      "id": "page-1-2",
+      "pageNumber": 2,
+      "content": "Chapter 2: The Guardian's Test\n\nThe path through the Whispering Woods led to a clearing where an ancient oak tree stood, its massive trunk twisted by centuries of magical influence. Beneath its canopy, a figure emerged from the shadows—tall, ethereal, with eyes that sparkled like starlight.\n\n\"Welcome, young Mysticwind,\" the Guardian spoke, his voice echoing like wind through leaves. \"I have been waiting for you.\"\n\nAria's breath caught in her throat. \"You know who I am?\"\n\n\"I know what you are destined to become,\" he replied, gesturing toward three glowing crystals that materialized in the air before her. \"But first, you must prove yourself worthy of the gift that flows through your bloodline.\"\n\nThe crystals—one emerald green, one sapphire blue, and one ruby red—pulsed with different magical energies. Each one called to her in its own way, offering power beyond imagination.\n\n\"Choose wisely,\" the Guardian warned. \"For your choice will determine not only your path forward but the fate of all who dwell in the magical realm. The emerald offers the power of nature, the sapphire grants mastery over time itself, and the ruby... the ruby holds the fire of creation and destruction.\"\n\nAria closed her eyes and listened to her heart. Deep within, she felt the answer calling to her, as clear as the morning sun breaking through the forest canopy.\n\nHer destiny awaited."
+    }
+  ],
+  "languages": {
+    "english": {
+      "title": "The Enchanted Chronicles",
+      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "pages": [
+        {
+          "id": "page-1-1",
+          "pageNumber": 1,
+          "content": "Chapter 1: The Awakening\n\nThe mist rolled across the ancient forest like a living thing, carrying whispers of forgotten spells and long-lost secrets. Aria stood at the edge of the Whispering Woods, her heart pounding with a mixture of fear and excitement.\n\nFor eighteen years, she had lived in the village below, unaware of her true heritage. But tonight, as the blood moon rose high above the trees, everything would change.\n\nThe pendant around her neck began to glow with an ethereal light, responding to the magical energies that permeated the air. She could feel it calling to her—the ancient power that flowed through her veins, the legacy of the Mysticwind lineage.\n\n\"Remember what grandmother told you,\" she whispered to herself, clutching the pendant tighter. \"Trust in the magic, and it will guide you home.\"\n\nAs she stepped into the forest, the trees seemed to part before her, creating a path illuminated by floating orbs of silver light. Each step forward took her deeper into a world she never knew existed, where every shadow held a story and every whisper carried the weight of centuries.\n\nThe adventure of a lifetime was about to begin."
+        },
+        {
+          "id": "page-1-2",
+          "pageNumber": 2,
+          "content": "Chapter 2: The Guardian's Test\n\nThe path through the Whispering Woods led to a clearing where an ancient oak tree stood, its massive trunk twisted by centuries of magical influence. Beneath its canopy, a figure emerged from the shadows—tall, ethereal, with eyes that sparkled like starlight.\n\n\"Welcome, young Mysticwind,\" the Guardian spoke, his voice echoing like wind through leaves. \"I have been waiting for you.\"\n\nAria's breath caught in her throat. \"You know who I am?\"\n\n\"I know what you are destined to become,\" he replied, gesturing toward three glowing crystals that materialized in the air before her. \"But first, you must prove yourself worthy of the gift that flows through your bloodline.\"\n\nThe crystals—one emerald green, one sapphire blue, and one ruby red—pulsed with different magical energies. Each one called to her in its own way, offering power beyond imagination.\n\n\"Choose wisely,\" the Guardian warned. \"For your choice will determine not only your path forward but the fate of all who dwell in the magical realm. The emerald offers the power of nature, the sapphire grants mastery over time itself, and the ruby... the ruby holds the fire of creation and destruction.\"\n\nAria closed her eyes and listened to her heart. Deep within, she felt the answer calling to her, as clear as the morning sun breaking through the forest canopy.\n\nHer destiny awaited."
+        }
+      ]
+    },
+    "hindi": {
+      "title": "जादुई इतिहास",
+      "description": "प्राचीन क्षेत्रों के माध्यम से एक रहस्यमय यात्रा जहाँ जादू और वास्तविकता आपस में जुड़ी हुई हैं।",
+      "pages": [
+        {
+          "id": "page-1-1-hi",
+          "pageNumber": 1,
+          "content": "अध्याय 1: जागृति\n\nधुंध प्राचीन जंगल में एक जीवित चीज़ की तरह लुढ़क रही थी, भूले हुए मंत्रों और लंबे समय से खोए गए रहस्यों की फुसफुसाहट ले जा रही थी। आरिया व्हिस्परिंग वुड्स के किनारे खड़ी थी, उसका दिल डर और उत्साह के मिश्रण से धड़क रहा था।\n\nअठारह वर्षों तक, वह नीचे के गांव में रही थी, अपनी वास्तविक विरासत से अनजान। लेकिन आज रात, जब रक्त चंद्रमा पेड़ों के ऊपर ऊंचा उठा, सब कुछ बदल जाएगा।\n\nउसके गले में पेंडेंट एक ईथर प्रकाश से चमकने लगा, हवा में व्याप्त जादुई ऊर्जाओं का जवाब देते हुए। वह इसे अपने लिए बुलाते हुए महसूस कर सकती थी—प्राचीन शक्ति जो उसकी नसों में बहती थी।\n\n\"याद रखो दादी ने तुमसे क्या कहा था,\" उसने खुद से फुसफुसाते हुए कहा। \"जादू पर भरोसा करो, और यह तुम्हें घर का रास्ता दिखाएगा।\"\n\nजैसे ही वह जंगल में कदम रखती है, पेड़ उसके सामने अलग होते दिखाई देते हैं। आगे का हर कदम उसे एक ऐसी दुनिया में गहरे ले जा रहा था जिसका वह कभी अस्तित्व नहीं जानती थी।\n\nजीवन भर का साहसिक काम शुरू होने वाला था।"
+        },
+        {
+          "id": "page-1-2-hi",
+          "pageNumber": 2,
+          "content": "अध्याय 2: अभिभावक की परीक्षा\n\nरास्ता एक समाशोधन की ओर ले गया जहां एक प्राचीन ओक का पेड़ खड़ा था। छाया से एक आकृति उभरी—लंबी, ईथर, तारों की रोशनी की तरह चमकती आंखों के साथ।\n\n\"स्वागत है, युवा मिस्टिकविंड,\" अभिभावक बोला। \"मैं तुम्हारा इंतजार कर रहा था।\"\n\nआरिया का सांस उसके गले में फंस गया। \"आप जानते हैं मैं कौन हूं?\"\n\n\"मैं जानता हूं कि तुम क्या बनने के लिए नियत हो,\" उसने तीन चमकते क्रिस्टल की ओर इशारा करते हुए उत्तर दिया। \"लेकिन पहले, तुम्हें अपनी रक्त रेखा के योग्य साबित करना होगा।\"\n\nक्रिस्टल—एक पन्ना हरा, एक नीलम नीला, और एक माणिक लाल—विभिन्न जादुई ऊर्जाओं के साथ स्पंदित हुए।\n\n\"समझदारी से चुनो,\" अभिभावक ने चेतावनी दी। \"क्योंकि तुम्हारी पसंद तुम्हारे भाग्य को निर्धारित करेगी।\"\n\nआरिया ने अपनी आंखें बंद कीं और अपने दिल की बात सुनी। उसका भाग्य प्रतीक्षा कर रहा था।"
+        }
+      ]
+    },
+    "hinglish": {
+      "title": "The Jaadui Chronicles",
+      "description": "Ek mystical journey ancient realms ke through jahan magic aur reality intertwine karte hain.",
+      "pages": [
+        {
+          "id": "page-1-1-hn",
+          "pageNumber": 1,
+          "content": "Chapter 1: The Jagriti\n\nDhund ancient forest mein ek living cheez ki tarah roll kar rahi thi, forgotten spells aur long-lost secrets ki whispers le kar. Aria Whispering Woods ke edge pe khadi thi, uska heart fear aur excitement ke mixture se pound kar raha tha.\n\nEighteen saal tak, woh neeche ke village mein rahi thi, apni true heritage se unaware. Lekin tonight, jab blood moon trees ke upar high rise hua, sab kuch change ho jayega.\n\nUske neck mein pendant ek ethereal light se glow karne laga, magical energies ko respond karte hue. Woh ise apne liye call karte hue feel kar sakti thi—ancient power jo uski veins mein flow kar rahi thi.\n\n\"Remember kya grandmother ne tumse kaha tha,\" usne khud se whisper kiya. \"Magic pe trust karo, aur yeh tumhe ghar ka rasta guide karega.\"\n\nJaise hi woh forest mein step karti hai, trees uske saamne part hote dikh rahe the. Har step forward use ek aisi duniya mein deeper le ja raha tha jiska existence woh kabhi nahi jaanti thi.\n\nLifetime ka adventure shuru hone wala tha."
+        },
+        {
+          "id": "page-1-2-hn",
+          "pageNumber": 2,
+          "content": "Chapter 2: Guardian ki Test\n\nPath ek clearing ki taraf le gaya jahan ek ancient oak tree khada tha. Shadows se ek figure emerge hui—tall, ethereal, starlight ki tarah sparkle karte eyes ke saath.\n\n\"Welcome, young Mysticwind,\" Guardian bola. \"Main tumhara wait kar raha tha.\"\n\nAria ka breath uske throat mein catch ho gaya. \"Aap jaante hain main kaun hun?\"\n\n\"Main jaanta hun tum kya banne ke liye destined ho,\" usne reply kiya, teen glowing crystals ki taraf gesture karte hue. \"Lekin pehle, tumhe apni bloodline ke worthy prove karna hoga.\"\n\nCrystals—ek emerald green, ek sapphire blue, aur ek ruby red—different magical energies ke saath pulse kar rahe the.\n\n\"Wisely choose karo,\" Guardian ne warn kiya. \"Kyunki tumhari choice tumhara destiny determine karegi.\"\n\nAria ne apni eyes close kiin aur apne heart ki suni. Uska destiny wait kar raha tha."
+        }
+      ]
+    }
+  }
+}

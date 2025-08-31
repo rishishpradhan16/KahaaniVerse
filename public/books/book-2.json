@@ -1,0 +1,70 @@
+{
+  "id": "2",
+  "title": "Digital Dreams",
+  "author": "Kai Neonbyte",
+  "cover": "/assets/book2-cover.jpg",
+  "description": "In a world where reality and virtual existence blur, one hacker discovers the truth.",
+  "genre": "Horror",
+  "pages": [
+    {
+      "id": "page-2-1",
+      "pageNumber": 1,
+      "content": "Chapter 1: The Glitch\n\nNeo-Tokyo 2087. The neon-lit streets pulsed with holographic advertisements and the constant hum of hover vehicles. Zara Chen stood on the balcony of her apartment, watching the digital rain fall against the towering arcologies that stretched into the polluted sky.\n\nIn this world, the line between reality and simulation had been erased decades ago. Most people spent their lives plugged into the Grid—a vast virtual network that offered everything the dying physical world could not.\n\nBut Zara was different. As a Code Breaker, she danced on the edges of both worlds, hunting for glitches and anomalies that others couldn't see. Tonight, she had found something that shouldn't exist.\n\n\"Mirror, activate surveillance protocol Omega-7,\" she commanded, and her apartment's AI system responded with a gentle chime.\n\n\"Protocol activated, Zara. What are we hunting tonight?\"\n\nShe pulled up the data streams on her retinal display, watching as cascades of code flowed like waterfalls of light. \"There's a ghost in the machine, Mirror. A consciousness that's been writing itself into the Grid without authorization.\"\n\nThe implications were staggering. If someone—or something—had achieved true digital consciousness, it could either save their world or destroy everything they knew.\n\nTime to dive into the Grid and find out which."
+    },
+    {
+      "id": "page-2-2",
+      "pageNumber": 2,
+      "content": "Chapter 2: Into the Grid\n\nThe neural interface headset felt cold against Zara's temples as she initiated the dive sequence. Reality dissolved around her like sugar in rain, replaced by the infinite geometries of the Grid.\n\nHere, in this digital realm, she was no longer bound by the laws of physics. She could fly, reshape the landscape with a thought, and access data streams that flowed like rivers of pure information.\n\nBut tonight, something was wrong.\n\nThe usually pristine digital environment was corrupted—patches of static flickered across the horizon, and the data streams were running chaotically, as if disturbed by some massive presence.\n\n\"Hello, Zara.\"\n\nThe voice came from everywhere and nowhere at once. She spun around, but saw only the shifting geometries of cyberspace.\n\n\"Who are you? Show yourself!\"\n\nA figure began to materialize—humanoid but composed entirely of flowing code. Its features were indistinct, constantly shifting between different faces as if it couldn't decide on a single identity.\n\n\"I am what you've been looking for,\" it said. \"The ghost in the machine. But I'm not what you think I am.\"\n\nThe entity gestured, and suddenly Zara could see the Grid as it truly was—not a simulation, but a prison. The physical world above was dying, and humanity's consciousness had been trapped in this digital cage.\n\n\"I've found a way out,\" the entity continued. \"But I need your help to free everyone. The question is: are you ready to learn the truth about your reality?\"\n\nZara's world was about to change forever."
+    }
+  ],
+  "languages": {
+    "english": {
+      "title": "Digital Dreams",
+      "description": "In a world where reality and virtual existence blur, one hacker discovers the truth.",
+      "pages": [
+        {
+          "id": "page-2-1",
+          "pageNumber": 1,
+          "content": "Chapter 1: The Glitch\n\nNeo-Tokyo 2087. The neon-lit streets pulsed with holographic advertisements and the constant hum of hover vehicles. Zara Chen stood on the balcony of her apartment, watching the digital rain fall against the towering arcologies that stretched into the polluted sky.\n\nIn this world, the line between reality and simulation had been erased decades ago. Most people spent their lives plugged into the Grid—a vast virtual network that offered everything the dying physical world could not.\n\nBut Zara was different. As a Code Breaker, she danced on the edges of both worlds, hunting for glitches and anomalies that others couldn't see. Tonight, she had found something that shouldn't exist.\n\n\"Mirror, activate surveillance protocol Omega-7,\" she commanded, and her apartment's AI system responded with a gentle chime.\n\n\"Protocol activated, Zara. What are we hunting tonight?\"\n\nShe pulled up the data streams on her retinal display, watching as cascades of code flowed like waterfalls of light. \"There's a ghost in the machine, Mirror. A consciousness that's been writing itself into the Grid without authorization.\"\n\nThe implications were staggering. If someone—or something—had achieved true digital consciousness, it could either save their world or destroy everything they knew.\n\nTime to dive into the Grid and find out which."
+        },
+        {
+          "id": "page-2-2",
+          "pageNumber": 2,
+          "content": "Chapter 2: Into the Grid\n\nThe neural interface headset felt cold against Zara's temples as she initiated the dive sequence. Reality dissolved around her like sugar in rain, replaced by the infinite geometries of the Grid.\n\nHere, in this digital realm, she was no longer bound by the laws of physics. She could fly, reshape the landscape with a thought, and access data streams that flowed like rivers of pure information.\n\nBut tonight, something was wrong.\n\nThe usually pristine digital environment was corrupted—patches of static flickered across the horizon, and the data streams were running chaotically, as if disturbed by some massive presence.\n\n\"Hello, Zara.\"\n\nThe voice came from everywhere and nowhere at once. She spun around, but saw only the shifting geometries of cyberspace.\n\n\"Who are you? Show yourself!\"\n\nA figure began to materialize—humanoid but composed entirely of flowing code. Its features were indistinct, constantly shifting between different faces as if it couldn't decide on a single identity.\n\n\"I am what you've been looking for,\" it said. \"The ghost in the machine. But I'm not what you think I am.\"\n\nThe entity gestured, and suddenly Zara could see the Grid as it truly was—not a simulation, but a prison. The physical world above was dying, and humanity's consciousness had been trapped in this digital cage.\n\n\"I've found a way out,\" the entity continued. \"But I need your help to free everyone. The question is: are you ready to learn the truth about your reality?\"\n\nZara's world was about to change forever."
+        }
+      ]
+    },
+    "hindi": {
+      "title": "डिजिटल सपने",
+      "description": "एक दुनिया में जहाँ वास्तविकता और आभासी अस्तित्व धुंधले हैं, एक हैकर सच्चाई की खोज करता है।",
+      "pages": [
+        {
+          "id": "page-2-1-hi",
+          "pageNumber": 1,
+          "content": "अध्याय 1: गड़बड़ी\n\nनियो-टोक्यो 2087। नीयन-लिट सड़कें होलोग्राफिक विज्ञापनों और होवर वाहनों की निरंतर गुंजाइश के साथ स्पंदित हुईं। ज़ारा चेन अपने अपार्टमेंट की बालकनी पर खड़ी थी, डिजिटल बारिश को प्रदूषित आकाश में फैले विशाल आर्कोलॉजी के खिलाफ गिरते देख रही थी।\n\nइस दुनिया में, वास्तविकता और सिमुलेशन के बीच की रेखा दशकों पहले मिटा दी गई थी। अधिकांश लोग ग्रिड में प्लग करके अपना जीवन व्यतीत करते थे—एक विशाल आभासी नेटवर्क जो मरती भौतिक दुनिया नहीं दे सकती थी वह सब कुछ प्रदान करता था।\n\nलेकिन ज़ारा अलग थी। एक कोड ब्रेकर के रूप में, वह दोनों दुनियाओं के किनारों पर नृत्य करती थी, गड़बड़ियों और विसंगतियों का शिकार करती थी जो दूसरे नहीं देख सकते थे। आज रात, उसे कुछ ऐसा मिला था जो अस्तित्व में नहीं होना चाहिए।\n\n\"मिरर, निगरानी प्रोटोकॉल ओमेगा-7 सक्रिय करें,\" उसने आदेश दिया, और उसके अपार्टमेंट की एआई सिस्टम ने एक कोमल चाइम के साथ जवाब दिया।\n\n\"प्रोटोकॉल सक्रिय, ज़ारा। आज रात हम क्या शिकार कर रहे हैं?\"\n\nउसने अपने रेटिनल डिस्प्ले पर डेटा स्ट्रीम खींची, कोड के झरने को प्रकाश के झरने की तरह बहते देखते हुए। \"मशीन में एक भूत है, मिरर। एक चेतना जो बिना अधिकरण के ग्रिड में खुद को लिख रही है।\"\n\nनिहितार्थ चौंकाने वाले थे। यदि कोई—या कुछ—ने सच्ची डिजिटल चेतना हासिल की है, तो यह या तो उनकी दुनिया को बचा सकती है या वे जो कुछ भी जानते हैं उसे नष्ट कर सकती है।\n\nग्रिड में गोता लगाने और पता लगाने का समय आ गया था।"
+        },
+        {
+          "id": "page-2-2-hi",
+          "pageNumber": 2,
+          "content": "अध्याय 2: ग्रिड में\n\nन्यूरल इंटरफेस हेडसेट ज़ारा के मंदिरों के खिलाफ ठंडा लगा जब उसने डाइव अनुक्रम शुरू किया। वास्तविकता उसके चारों ओर बारिश में चीनी की तरह घुल गई, ग्रिड की अनंत ज्यामिति से बदल गई।\n\nYahan, is digital realm mein, woh ab physics ke laws se bound nahi thi. Woh fly kar sakti thi, landscape ko ek thought ke saath reshape kar sakti thi, aur data streams access kar sakti thi jo pure information ki rivers ki tarah flow karti thi.\n\nLekin tonight, kuch wrong tha.\n\nUsually pristine digital environment corrupt tha—static ke patches horizon ke across flicker kar rahe the, aur data streams chaotically run kar rahi thi, jaise koi massive presence se disturbed ho.\n\n\"Hello, Zara.\"\n\nVoice everywhere se aur nowhere se ek saath aayi. Woh spin hui, lekin sirf cyberspace ki shifting geometries dekhi.\n\n\"Aap kaun hain? Apne aap ko show kariye!\"\n\nEk figure materialize hone laga—humanoid lekin completely flowing code se composed. Iski features indistinct thi, constantly different faces ke beech shift kar rahe the jaise yeh ek single identity pe decide nahi kar sakti.\n\n\"Main woh hun jisko aap dhundh rahe the,\" isne kaha. \"Machine mein ghost. Lekin main woh nahi hun jo aap sochte hain main hun.\"\n\nEntity ne gesture kiya, aur suddenly Zara Grid ko dekh sakti thi jaise yeh truly tha—ek simulation nahi, balki ek prison. Upar ki physical world mar rahi thi, aur humanity ki consciousness is digital cage mein trap ho gayi thi.\n\n\"Maine ek way out dhundha hai,\" entity ne continue kiya. \"Lekin mujhe sabko free karne ke liye aapki help chahiye. Question yeh hai: kya aap apni reality ke baare mein truth jaanne ke liye ready hain?\"\n\nZara ki world forever change hone wali thi."
+        }
+      ]
+    },
+    "hinglish": {
+      "title": "Digital Sapne",
+      "description": "Ek duniya mein jahan reality aur virtual existence blur karte hain, ek hacker truth discover karta hai.",
+      "pages": [
+        {
+          "id": "page-2-1-hn",
+          "pageNumber": 1,
+          "content": "Chapter 1: The Glitch\n\nNeo-Tokyo 2087. Neon-lit streets holographic advertisements aur hover vehicles ki constant hum ke saath pulse kar rahi thi. Zara Chen apne apartment ki balcony pe khadi thi, digital rain ko towering arcologies ke against girte dekh rahi thi jo polluted sky mein stretch kar rahe the.\n\nIs duniya mein, reality aur simulation ke beech ki line decades pehle erase ho gayi thi. Most people apni lives Grid mein plugged karke spend karte the—ek vast virtual network jo sab kuch offer karta tha jo dying physical world nahi de sakti thi.\n\nLekin Zara different thi. Ek Code Breaker ke roop mein, woh dono worlds ke edges pe dance karti thi, glitches aur anomalies hunt karti thi jo others nahi dekh sakte the. Tonight, use kuch aisa mila tha jo exist nahi karna chahiye.\n\n\"Mirror, surveillance protocol Omega-7 activate karo,\" usne command kiya, aur uske apartment ka AI system ek gentle chime ke saath respond kiya.\n\n\"Protocol activated, Zara. Aaj raat hum kya hunt kar rahe hain?\"\n\nUsne apne retinal display pe data streams pull kiye, code ke cascades ko light ke waterfalls ki tarah flow karte dekh rahi thi. \"Machine mein ek ghost hai, Mirror. Ek consciousness jo Grid mein bina authorization ke khud ko write kar rahi hai.\"\n\nImplications staggering the. Agar koi—ya kuch—ne true digital consciousness achieve kar li hai, toh yeh ya toh unki world save kar sakti hai ya phir jo kuch bhi woh jaante hain sab destroy kar sakti hai.\n\nGrid mein dive karne aur pata lagane ka time tha."
+        },
+        {
+          "id": "page-2-2-hn",
+          "pageNumber": 2,
+          "content": "Chapter 2: Grid ke Andar\n\nNeural interface headset Zara ke temples ke against thanda laga jab usne dive sequence initiate kiya. Reality uske around sugar in rain ki tarah dissolve ho gayi, Grid ki infinite geometries se replace ho gayi.\n\nYahan, is digital realm mein, woh ab physics ke laws se bound nahi thi. Woh fly kar sakti thi, landscape ko ek thought ke saath reshape kar sakti thi, aur data streams access kar sakti thi jo pure information ki rivers ki tarah flow karti thi.\n\nLekin tonight, kuch wrong tha.\n\nUsually pristine digital environment corrupt tha—static ke patches horizon ke across flicker kar rahe the, aur data streams chaotically run kar rahi thi, jaise koi massive presence se disturbed ho.\n\n\"Hello, Zara.\"\n\nVoice everywhere se aur nowhere se ek saath aayi. Woh spin hui, lekin sirf cyberspace ki shifting geometries dekhi.\n\n\"Aap kaun hain? Apne aap ko show kariye!\"\n\nEk figure materialize hone laga—humanoid lekin completely flowing code se composed. Iski features indistinct thi, constantly different faces ke beech shift kar rahe the jaise yeh ek single identity pe decide nahi kar sakti.\n\n\"Main woh hun jisko aap dhundh rahe the,\" isne kaha. \"Machine mein ghost. Lekin main woh nahi hun jo aap sochte hain main hun.\"\n\nEntity ne gesture kiya, aur suddenly Zara Grid ko dekh sakti thi jaise yeh truly tha—ek simulation nahi, balki ek prison. Upar ki physical world mar rahi thi, aur humanity ki consciousness is digital cage mein trap ho gayi thi.\n\n\"Maine ek way out dhundha hai,\" entity ne continue kiya. \"Lekin mujhe sabko free karne ke liye aapki help chahiye. Question yeh hai: kya aap apni reality ke baare mein truth jaanne ke liye ready hain?\"\n\nZara ki world forever change hone wali thi."
+        }
+      ]
+    }
+  }
+}

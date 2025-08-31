@@ -1,3 +1,12 @@
+export interface BookMetadata {
+  id: string;
+  title: string;
+  author: string;
+  cover: string;
+  description: string;
+  genre: string;
+}
+
 export interface Book {
   id: string;
   title: string;

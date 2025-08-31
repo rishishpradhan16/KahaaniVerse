@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "The Enchanted Chronicles",
+    "author": "Elena Mysticwind",
+    "cover": "/assets/book1-cover.jpg",
+    "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+    "genre": "Mystery Thriller"
+  },
+  {
+    "id": "2",
+    "title": "Digital Dreams",
+    "author": "Kai Neonbyte",
+    "cover": "/assets/book2-cover.jpg",
+    "description": "In a world where reality and virtual existence blur, one hacker discovers the truth.",
+    "genre": "Horror"
+  },
+  {
+    "id": "3",
+    "title": "Whispers of the Heart",
+    "author": "Victoria Rosehaven",
+    "cover": "/assets/book3-cover.jpg",
+    "description": "A tale of forbidden love set against the backdrop of Victorian England.",
+    "genre": "Mystery Thriller"
+  },
+  {
+    "id": "4",
+    "title": "The Quantum Garden",
+    "author": "Dr. Maya Patel",
+    "cover": "/assets/book1-cover.jpg",
+    "description": "A scientist discovers a garden where quantum physics and consciousness intertwine.",
+    "genre": "Sci-Fi"
+  }
+]

@@ -12,8 +12,8 @@ import MobileNav from '../components/MobileNav';
 import Footer from '../components/Footer';
 import { useBooks } from '../context/BookContext';
 import { localStorage } from '../utils/localStorage';
-import { Book } from '../types/book';
-import { sampleBooks } from '../data/sampleBooks';
+import { Book, BookMetadata } from '../types/book';
+import { bookService } from '../services/bookService';
 import { Input } from '../components/ui/input';
 import {
   NavigationMenu,
@@ -33,10 +33,24 @@ const Index = () => {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchState, setSearchState] = useState<SearchState>('idle');
-  const [filteredBooks, setFilteredBooks] = useState<Book[]>([]);
+  const [filteredBooks, setFilteredBooks] = useState<BookMetadata[]>([]);
+  const [books, setBooks] = useState<BookMetadata[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    dispatch({ type: 'SET_BOOKS', payload: sampleBooks });
+    const loadBooks = async () => {
+      try {
+        const loadedBooks = await bookService.getBookMetadata();
+        setBooks(loadedBooks);
+        dispatch({ type: 'SET_BOOKS', payload: loadedBooks });
+      } catch (error) {
+        console.error('Failed to load books:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadBooks();
   }, [dispatch]);
 
   // Search functionality
@@ -47,7 +61,7 @@ const Index = () => {
       return;
     }
     setSearchState('searching');
-    const filtered = sampleBooks.filter(book =>
+    const filtered = books.filter(book =>
       book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       book.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
       book.genre.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -56,23 +70,23 @@ const Index = () => {
 
     setFilteredBooks(filtered);
     setSearchState('results');
-  }, [searchQuery]);
+  }, [searchQuery, books]);
 
   const getBookmarkedBooks = () => {
     const bookmarks = localStorage.getBookmarks();
     const bookmarkedBookIds = Object.keys(bookmarks);
-    return sampleBooks.filter(book => bookmarkedBookIds.includes(book.id));
+    return books.filter(book => bookmarkedBookIds.includes(book.id));
   };
 
   const getLatestBooks = () => {
     // Sort by id (assuming higher id = newer book) since publishedDate doesn't exist
-    return [...sampleBooks].sort((a, b) => parseInt(b.id) - parseInt(a.id));
+    return [...books].sort((a, b) => parseInt(b.id) - parseInt(a.id));
   };
 
   const getLibraryBooks = () => {
     const storageLibrary = localStorage.getLibrary();
     const contextLibrary = state.readingProgress.map(progress => {
-      const book = sampleBooks.find(b => b.id === progress.bookId);
+      const book = books.find(b => b.id === progress.bookId);
       return book || null;
     }).filter(Boolean) as Book[];
 
@@ -82,16 +96,26 @@ const Index = () => {
       ...contextLibrary.map(b => b.id)
     ]);
 
-    return sampleBooks.filter(book => allLibraryBookIds.has(book.id));
+    return books.filter(book => allLibraryBookIds.has(book.id));
   };
 
   const getBooksByCategory = (category: string) => {
-    return sampleBooks.filter(book => book.genre === category);
+    return books.filter(book => book.genre === category);
   };
 
-  const handleBookSelect = (book: Book) => {
-    setSelectedBook(book);
-    setViewState('book-cover');
+  const handleBookSelect = async (book: BookMetadata) => {
+    try {
+      // Load the full book data when selected
+      const fullBook = await bookService.getBookById(book.id);
+      if (fullBook) {
+        setSelectedBook(fullBook);
+        setViewState('book-cover');
+      } else {
+        console.error('Failed to load book data for:', book.id);
+      }
+    } catch (error) {
+      console.error('Error loading book:', error);
+    }
   };
 
   const handleStartReading = () => {
@@ -278,6 +302,14 @@ const Index = () => {
   );
 
   const renderContent = () => {
+    if (isLoading) {
+      return (
+        <div className="px-6 py-12 text-center">
+          <p className="text-muted-foreground">Loading books...</p>
+        </div>
+      );
+    }
+
     switch (viewState) {
       case 'home':
         return (
@@ -285,7 +317,7 @@ const Index = () => {
             <div className="px-4 md:px-6">
               <HorizontalBookScroll
                 title="Trending Now"
-                books={sampleBooks}
+                books={books}
                 onBookSelect={handleBookSelect}
               />
               <HorizontalBookScroll

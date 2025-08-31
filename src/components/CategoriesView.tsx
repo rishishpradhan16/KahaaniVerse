@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Book } from '../types/book';
-import { sampleBooks } from '../data/sampleBooks';
+import { Book, BookMetadata } from '../types/book';
+import { bookService } from '../services/bookService';
 
 interface CategoriesViewProps {
-  onBookSelect: (book: Book) => void;
+  onBookSelect: (book: BookMetadata) => void;
 }
 
 const CategoriesView: React.FC<CategoriesViewProps> = ({ onBookSelect }) => {
+  const [books, setBooks] = useState<BookMetadata[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const categories = [
     'Mystery Thriller',
     'Horror',
@@ -19,9 +22,33 @@ const CategoriesView: React.FC<CategoriesViewProps> = ({ onBookSelect }) => {
     'True Crime / Realistic Fiction'
   ];
 
+  useEffect(() => {
+    const loadBooks = async () => {
+      try {
+        const loadedBooks = await bookService.getBookMetadata();
+        setBooks(loadedBooks);
+      } catch (error) {
+        console.error('Failed to load books:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadBooks();
+  }, []);
+
   const getBooksByCategory = (category: string) => {
-    return sampleBooks.filter(book => book.genre === category);
+    return books.filter(book => book.genre === category);
   };
+
+  if (isLoading) {
+    return (
+      <div className="px-6 py-12 text-center">
+        <h1 className="text-3xl font-bold text-foreground mb-8">Browse by Category</h1>
+        <p className="text-muted-foreground">Loading books...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="px-6 space-y-12">
