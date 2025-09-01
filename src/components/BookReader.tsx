@@ -8,10 +8,12 @@ import { useToast } from '../hooks/use-toast';
 import { localStorage } from '../utils/localStorage';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { useIsMobile } from '../hooks/use-mobile';
+
 interface BookReaderProps {
   book: Book;
   onBack: () => void;
 }
+
 export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
   const { dispatch } = useBooks();
   const { toast } = useToast();
@@ -19,18 +21,19 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('english');
   const [isFlipping, setIsFlipping] = useState(false);
   const [isLanguagePopoverOpen, setIsLanguagePopoverOpen] = useState(false);
-  // ✅ Touch gesture swipe refs
+
   const touchStartX = useRef<number>(0);
   const touchStartY = useRef<number>(0);
   const readerRef = useRef<HTMLDivElement>(null);
-  // Initialize page from bookmark
+
   const savedBookmark = localStorage.getBookmark(book.id);
   const initialPageIndex = savedBookmark ? Math.max(0, savedBookmark - 1) : 0;
   const [currentPageIndex, setCurrentPageIndex] = useState(initialPageIndex);
+
   const currentBookContent = book.languages[currentLanguage] || book.languages.english;
   const currentPage = currentBookContent.pages[currentPageIndex];
   const isBookmarked = localStorage.getBookmark(book.id) === currentPage?.pageNumber;
-  // Load saved state from localStorage
+
   useEffect(() => {
     const library = localStorage.getLibrary();
     const existingBook = library.find(b => b.bookId === book.id);
@@ -47,17 +50,19 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     const savedLanguage = localStorage.getLanguagePreference();
     setCurrentLanguage(savedLanguage);
   }, [book.id]);
-  // Stable Refs
+
   const currentPageIndexRef = useRef(currentPageIndex);
   const currentBookContentRef = useRef(currentBookContent);
   const flipTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     currentPageIndexRef.current = currentPageIndex;
   }, [currentPageIndex]);
+
   useEffect(() => {
     currentBookContentRef.current = currentBookContent;
   }, [currentBookContent]);
-  // Navigation
+
   const nextPageStable = useCallback(() => {
     const currentIndex = currentPageIndexRef.current;
     const totalPages = currentBookContentRef.current.pages.length;
@@ -68,6 +73,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   }, []);
+
   const prevPageStable = useCallback(() => {
     const currentIndex = currentPageIndexRef.current;
     if (currentIndex > 0) {
@@ -77,11 +83,11 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   }, []);
-  // ✅ Scroll to top whenever page changes
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPageIndex]);
-  // Keyboard nav
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const activeElement = document.activeElement;
@@ -104,7 +110,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     window.addEventListener('keydown', handleKeyDown, { capture: true });
     return () => window.removeEventListener('keydown', handleKeyDown, { capture: true });
   }, [nextPageStable, prevPageStable, onBack]);
-  // Progress
+
   useEffect(() => {
     if (currentPage) {
       const newProgress = {
@@ -121,7 +127,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       localStorage.setReadingProgress(allProgress);
     }
   }, [currentPageIndex, currentPage, book.id, dispatch]);
-  // Bookmark toggle
+
   const toggleBookmark = () => {
     if (!currentPage) return;
     const currentPageNumber = currentPage.pageNumber;
@@ -144,6 +150,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     }
     setCurrentPageIndex(currentPageIndex);
   };
+
   const nextPage = () => nextPageStable();
   const prevPage = () => prevPageStable();
   const goToPage = (index: number) => {
@@ -154,11 +161,12 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   };
-  // ✅ Swipe gestures
+
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
   };
+
   const handleTouchEnd = (e: React.TouchEvent) => {
     const touchEndX = e.changedTouches[0].clientX;
     const touchEndY = e.changedTouches[0].clientY;
@@ -169,7 +177,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       else prevPageStable(); // right swipe
     }
   };
-  // Language
+
   const changeLanguage = (language: Language) => {
     setCurrentLanguage(language);
     localStorage.setLanguagePreference(language);
@@ -177,7 +185,9 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     setIsLanguagePopoverOpen(false);
     toast({ title: "Language changed", description: `Switched to ${language}` });
   };
+
   if (!currentPage) return null;
+
   return (
     <div
       ref={readerRef}
@@ -243,6 +253,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
           </Button>
         </div>
       </div>
+
       {/* Reader */}
       <div className="flex-1 flex items-center justify-center p-6">
         <div className="max-w-4xl w-full relative">
@@ -264,13 +275,15 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               </div>
             </motion.div>
           </AnimatePresence>
+
           {/* Navigation */}
           <div className="flex items-center justify-between mt-6">
             <Button onClick={prevPage} disabled={currentPageIndex === 0 || isFlipping} variant="outline" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Previous
             </Button>
-            {/* ✅ Fixed Pagination with Ellipsis */}
+
+            {/* Fixed Pagination with Ellipsis */}
             <div className="flex items-center gap-1 flex-wrap justify-center">
               {currentBookContent.pages.length > 20 ? (
                 <>
@@ -286,14 +299,17 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                   >
                     1
                   </button>
+
                   {/* Left Ellipsis */}
                   {currentPageIndex > 4 && <span className="px-2">…</span>}
-                  {/* Middle Pages */}
+
+                  {/* Middle Pages (skip first & last page) */}
                   {Array.from({ length: currentBookContent.pages.length }, (_, i) => i)
                     .filter(
                       i =>
-                        i === currentPageIndex ||
-                        (i >= currentPageIndex - 2 && i <= currentPageIndex + 2)
+                        i !== 0 &&
+                        i !== currentBookContent.pages.length - 1 &&
+                        (i === currentPageIndex || (i >= currentPageIndex - 2 && i <= currentPageIndex + 2))
                     )
                     .map(i => (
                       <button
@@ -309,10 +325,10 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                         {i + 1}
                       </button>
                     ))}
+
                   {/* Right Ellipsis */}
-                  {currentPageIndex < currentBookContent.pages.length - 5 && (
-                    <span className="px-2">…</span>
-                  )}
+                  {currentPageIndex < currentBookContent.pages.length - 5 && <span className="px-2">…</span>}
+
                   {/* Last Page */}
                   <button
                     onClick={() => goToPage(currentBookContent.pages.length - 1)}
@@ -343,6 +359,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                 ))
               )}
             </div>
+
             <Button
               onClick={nextPage}
               disabled={currentPageIndex === currentBookContent.pages.length - 1 || isFlipping}
@@ -353,7 +370,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
-          {/* ✅ Navigation hints with mobile fix */}
+
           <div className="text-center mt-4 text-sm text-muted-foreground">
             {isMobile ? 'Use swipe gestures to navigate' : 'Use arrow keys to navigate • ESC to close'}
           </div>
