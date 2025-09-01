@@ -32,5 +32,14 @@
     "description": "A scientist discovers a garden where quantum physics and consciousness intertwine.",
     "genre": "Sci-Fi",
     "isTrending": true
+  },
+  {
+    "id": "f4680c5a-3e6a-4b8e-9990-6406864d1ec7",
+    "title": "DHARANA: The Art of Conscious Flow",
+    "author": "Rishish Pradhan",
+    "cover": "/assets/book5-cover.png",
+    "description": "DHARANA: The Art of Conscious Flow by Rishish Pradhan",
+    "genre": "Drama / Philosophy",
+    "isTrending": true
   }
 ]
