@@ -8,38 +8,28 @@ import { useToast } from '../hooks/use-toast';
 import { localStorage } from '../utils/localStorage';
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 import { useIsMobile } from '../hooks/use-mobile';
-
 interface BookReaderProps {
   book: Book;
   onBack: () => void;
 }
-
 export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
   const { dispatch } = useBooks();
   const { toast } = useToast();
   const isMobile = useIsMobile();
-
   const [currentLanguage, setCurrentLanguage] = useState<Language>('english');
   const [isFlipping, setIsFlipping] = useState(false);
   const [isLanguagePopoverOpen, setIsLanguagePopoverOpen] = useState(false);
-
   // ✅ Touch gesture swipe refs
   const touchStartX = useRef<number>(0);
   const touchStartY = useRef<number>(0);
-  const lastTouchX = useRef<number>(0);
-  const lastTouchY = useRef<number>(0);
-  const didLockHorizontal = useRef<boolean>(false);
   const readerRef = useRef<HTMLDivElement>(null);
-
   // Initialize page from bookmark
   const savedBookmark = localStorage.getBookmark(book.id);
   const initialPageIndex = savedBookmark ? Math.max(0, savedBookmark - 1) : 0;
   const [currentPageIndex, setCurrentPageIndex] = useState(initialPageIndex);
-
   const currentBookContent = book.languages[currentLanguage] || book.languages.english;
   const currentPage = currentBookContent.pages[currentPageIndex];
   const isBookmarked = localStorage.getBookmark(book.id) === currentPage?.pageNumber;
-
   // Load saved state from localStorage
   useEffect(() => {
     const library = localStorage.getLibrary();
@@ -57,20 +47,16 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     const savedLanguage = localStorage.getLanguagePreference();
     setCurrentLanguage(savedLanguage);
   }, [book.id]);
-
   // Stable Refs
   const currentPageIndexRef = useRef(currentPageIndex);
   const currentBookContentRef = useRef(currentBookContent);
   const flipTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
   useEffect(() => {
     currentPageIndexRef.current = currentPageIndex;
   }, [currentPageIndex]);
-
   useEffect(() => {
     currentBookContentRef.current = currentBookContent;
   }, [currentBookContent]);
-
   // Navigation
   const nextPageStable = useCallback(() => {
     const currentIndex = currentPageIndexRef.current;
@@ -82,7 +68,6 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   }, []);
-
   const prevPageStable = useCallback(() => {
     const currentIndex = currentPageIndexRef.current;
     if (currentIndex > 0) {
@@ -92,13 +77,11 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   }, []);
-
-  // ✅ Scroll to top whenever page changes (helps mobile after navigation)
+  // ✅ Scroll to top whenever page changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPageIndex]); [7]
-
-  // Keyboard nav (desktop unchanged)
+  }, [currentPageIndex]);
+  // Keyboard nav
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const activeElement = document.activeElement;
@@ -121,7 +104,6 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     window.addEventListener('keydown', handleKeyDown, { capture: true });
     return () => window.removeEventListener('keydown', handleKeyDown, { capture: true });
   }, [nextPageStable, prevPageStable, onBack]);
-
   // Progress
   useEffect(() => {
     if (currentPage) {
@@ -139,7 +121,6 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       localStorage.setReadingProgress(allProgress);
     }
   }, [currentPageIndex, currentPage, book.id, dispatch]);
-
   // Bookmark toggle
   const toggleBookmark = () => {
     if (!currentPage) return;
@@ -163,10 +144,8 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     }
     setCurrentPageIndex(currentPageIndex);
   };
-
   const nextPage = () => nextPageStable();
   const prevPage = () => prevPageStable();
-
   const goToPage = (index: number) => {
     if (index >= 0 && index < currentBookContent.pages.length) {
       if (flipTimeoutRef.current) clearTimeout(flipTimeoutRef.current);
@@ -175,69 +154,21 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       flipTimeoutRef.current = setTimeout(() => setIsFlipping(false), 300);
     }
   };
-
-  // ===== Mobile swipe: improved horizontal detection + top reset =====
-  // Use capture + passive:false so preventDefault can suppress native scroll when locked horizontally. [11][6]
-  useEffect(() => {
-    if (!isMobile || !readerRef.current) return;
-
-    const el = readerRef.current;
-    const THRESHOLD = 50; // px to count as swipe
-    const ANGLE_LOCK_RATIO = 1.2; // lock when |dx| > 1.2*|dy| (mostly horizontal) [1]
-
-    const onStart = (e: TouchEvent) => {
-      const t = e.touches;
-      touchStartX.current = lastTouchX.current = t.clientX;
-      touchStartY.current = lastTouchY.current = t.clientY;
-      didLockHorizontal.current = false;
-    };
-
-    const onMove = (e: TouchEvent) => {
-      const t = e.touches;
-      lastTouchX.current = t.clientX;
-      lastTouchY.current = t.clientY;
-
-      const dx = lastTouchX.current - touchStartX.current;
-      const dy = lastTouchY.current - touchStartY.current;
-
-      // If movement is predominantly horizontal, lock and prevent vertical scroll
-      if (!didLockHorizontal.current && Math.abs(dx) > ANGLE_LOCK_RATIO * Math.abs(dy)) {
-        didLockHorizontal.current = true;
-      }
-      if (didLockHorizontal.current) {
-        e.preventDefault(); // stops page from vertically scrolling while swiping horizontally [11]
-      }
-    };
-
-    const onEnd = (_e: TouchEvent) => {
-      const dx = lastTouchX.current - touchStartX.current;
-      const dy = lastTouchY.current - touchStartY.current;
-
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > THRESHOLD) {
-        if (dx < 0) {
-          // swipe left → next
-          nextPageStable();
-        } else {
-          // swipe right → prev
-          prevPageStable();
-        }
-        // After navigation on mobile, snap to top to start reading from beginning. [7]
-        setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior }), 0);
-      }
-    };
-
-    el.addEventListener('touchstart', onStart, { capture: true, passive: true });
-    // note: touchmove must be passive:false to allow preventDefault when horizontally locked [11]
-    el.addEventListener('touchmove', onMove, { capture: true, passive: false });
-    el.addEventListener('touchend', onEnd, { capture: true, passive: true });
-
-    return () => {
-      el.removeEventListener('touchstart', onStart, { capture: true } as any);
-      el.removeEventListener('touchmove', onMove, { capture: true } as any);
-      el.removeEventListener('touchend', onEnd, { capture: true } as any);
-    };
-  }, [isMobile, nextPageStable, prevPageStable]); [11][1][7]
-
+  // ✅ Swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaX = touchStartX.current - touchEndX;
+    const deltaY = touchStartY.current - touchEndY;
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+      if (deltaX > 0) nextPageStable(); // left swipe
+      else prevPageStable(); // right swipe
+    }
+  };
   // Language
   const changeLanguage = (language: Language) => {
     setCurrentLanguage(language);
@@ -246,20 +177,13 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     setIsLanguagePopoverOpen(false);
     toast({ title: "Language changed", description: `Switched to ${language}` });
   };
-
   if (!currentPage) return null;
-
-  // Pagination window fix (unchanged)
-  const total = currentBookContent.pages.length;
-  const lastIndex = total - 1;
-  const start = Math.max(1, currentPageIndex - 2);
-  const end = Math.min(lastIndex - 1, currentPageIndex + 2);
-
   return (
     <div
       ref={readerRef}
       className="min-h-screen bg-background flex flex-col"
-      // onTouchStart/onTouchEnd removed; dedicated listener above handles mobile reliably
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Header */}
       <div className="flex items-center justify-between p-6 border-b border-border">
@@ -319,7 +243,6 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
           </Button>
         </div>
       </div>
-
       {/* Reader */}
       <div className="flex-1 flex items-center justify-center p-6">
         <div className="max-w-4xl w-full relative">
@@ -341,14 +264,12 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               </div>
             </motion.div>
           </AnimatePresence>
-
           {/* Navigation */}
           <div className="flex items-center justify-between mt-6">
             <Button onClick={prevPage} disabled={currentPageIndex === 0 || isFlipping} variant="outline" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Previous
             </Button>
-
             {/* ✅ Fixed Pagination with Ellipsis */}
             <div className="flex items-center gap-1 flex-wrap justify-center">
               {currentBookContent.pages.length > 20 ? (
@@ -365,13 +286,15 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                   >
                     1
                   </button>
-
                   {/* Left Ellipsis */}
-                  {start > 1 && <span className="px-2">…</span>}
-
+                  {currentPageIndex > 4 && <span className="px-2">…</span>}
                   {/* Middle Pages */}
                   {Array.from({ length: currentBookContent.pages.length }, (_, i) => i)
-                    .filter(i => i >= start && i <= end)
+                    .filter(
+                      i =>
+                        i === currentPageIndex ||
+                        (i >= currentPageIndex - 2 && i <= currentPageIndex + 2)
+                    )
                     .map(i => (
                       <button
                         key={i}
@@ -386,10 +309,10 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                         {i + 1}
                       </button>
                     ))}
-
                   {/* Right Ellipsis */}
-                  {end < lastIndex - 1 && <span className="px-2">…</span>}
-
+                  {currentPageIndex < currentBookContent.pages.length - 5 && (
+                    <span className="px-2">…</span>
+                  )}
                   {/* Last Page */}
                   <button
                     onClick={() => goToPage(currentBookContent.pages.length - 1)}
@@ -420,7 +343,6 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                 ))
               )}
             </div>
-
             <Button
               onClick={nextPage}
               disabled={currentPageIndex === currentBookContent.pages.length - 1 || isFlipping}
@@ -431,7 +353,6 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               <ArrowRight className="h-4 w-4" />
             </Button>
           </div>
-
           {/* ✅ Navigation hints with mobile fix */}
           <div className="text-center mt-4 text-sm text-muted-foreground">
             {isMobile ? 'Use swipe gestures to navigate' : 'Use arrow keys to navigate • ESC to close'}
