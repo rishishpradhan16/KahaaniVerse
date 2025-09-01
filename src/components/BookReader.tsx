@@ -26,6 +26,9 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
   // ✅ Touch gesture swipe refs
   const touchStartX = useRef<number>(0);
   const touchStartY = useRef<number>(0);
+  const lastTouchX = useRef<number>(0);
+  const lastTouchY = useRef<number>(0);
+  const didLockHorizontal = useRef<boolean>(false);
   const readerRef = useRef<HTMLDivElement>(null);
 
   // Initialize page from bookmark
@@ -90,12 +93,12 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     }
   }, []);
 
-  // ✅ Scroll to top whenever page changes
+  // ✅ Scroll to top whenever page changes (helps mobile after navigation)
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPageIndex]);
+  }, [currentPageIndex]); [7]
 
-  // Keyboard nav
+  // Keyboard nav (desktop unchanged)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const activeElement = document.activeElement;
@@ -173,23 +176,67 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
     }
   };
 
-  // ✅ Swipe gestures
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches.clientX;
-    touchStartY.current = e.touches.clientY;
-  };
+  // ===== Mobile swipe: improved horizontal detection + top reset =====
+  // Use capture + passive:false so preventDefault can suppress native scroll when locked horizontally. [11][6]
+  useEffect(() => {
+    if (!isMobile || !readerRef.current) return;
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const touchEndX = e.changedTouches.clientX;
-    const touchEndY = e.changedTouches.clientY;
-    const deltaX = touchStartX.current - touchEndX;
-    const deltaY = touchStartY.current - touchEndY;
+    const el = readerRef.current;
+    const THRESHOLD = 50; // px to count as swipe
+    const ANGLE_LOCK_RATIO = 1.2; // lock when |dx| > 1.2*|dy| (mostly horizontal) [1]
 
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-      if (deltaX > 0) nextPageStable(); // left swipe
-      else prevPageStable(); // right swipe
-    }
-  };
+    const onStart = (e: TouchEvent) => {
+      const t = e.touches;
+      touchStartX.current = lastTouchX.current = t.clientX;
+      touchStartY.current = lastTouchY.current = t.clientY;
+      didLockHorizontal.current = false;
+    };
+
+    const onMove = (e: TouchEvent) => {
+      const t = e.touches;
+      lastTouchX.current = t.clientX;
+      lastTouchY.current = t.clientY;
+
+      const dx = lastTouchX.current - touchStartX.current;
+      const dy = lastTouchY.current - touchStartY.current;
+
+      // If movement is predominantly horizontal, lock and prevent vertical scroll
+      if (!didLockHorizontal.current && Math.abs(dx) > ANGLE_LOCK_RATIO * Math.abs(dy)) {
+        didLockHorizontal.current = true;
+      }
+      if (didLockHorizontal.current) {
+        e.preventDefault(); // stops page from vertically scrolling while swiping horizontally [11]
+      }
+    };
+
+    const onEnd = (_e: TouchEvent) => {
+      const dx = lastTouchX.current - touchStartX.current;
+      const dy = lastTouchY.current - touchStartY.current;
+
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > THRESHOLD) {
+        if (dx < 0) {
+          // swipe left → next
+          nextPageStable();
+        } else {
+          // swipe right → prev
+          prevPageStable();
+        }
+        // After navigation on mobile, snap to top to start reading from beginning. [7]
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior }), 0);
+      }
+    };
+
+    el.addEventListener('touchstart', onStart, { capture: true, passive: true });
+    // note: touchmove must be passive:false to allow preventDefault when horizontally locked [11]
+    el.addEventListener('touchmove', onMove, { capture: true, passive: false });
+    el.addEventListener('touchend', onEnd, { capture: true, passive: true });
+
+    return () => {
+      el.removeEventListener('touchstart', onStart, { capture: true } as any);
+      el.removeEventListener('touchmove', onMove, { capture: true } as any);
+      el.removeEventListener('touchend', onEnd, { capture: true } as any);
+    };
+  }, [isMobile, nextPageStable, prevPageStable]); [11][1][7]
 
   // Language
   const changeLanguage = (language: Language) => {
@@ -202,18 +249,17 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
 
   if (!currentPage) return null;
 
-  // ===== FIX: compute a safe window that excludes first(0) and last(lastIndex) =====
+  // Pagination window fix (unchanged)
   const total = currentBookContent.pages.length;
   const lastIndex = total - 1;
   const start = Math.max(1, currentPageIndex - 2);
   const end = Math.min(lastIndex - 1, currentPageIndex + 2);
-  // ================================================================================
+
   return (
     <div
       ref={readerRef}
       className="min-h-screen bg-background flex flex-col"
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      // onTouchStart/onTouchEnd removed; dedicated listener above handles mobile reliably
     >
       {/* Header */}
       <div className="flex items-center justify-between p-6 border-b border-border">
@@ -323,8 +369,8 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                   {/* Left Ellipsis */}
                   {start > 1 && <span className="px-2">…</span>}
 
-                  {/* Middle Pages (exclude first and last to prevent duplicates) */}
-                  {Array.from({ length: total }, (_, i) => i)
+                  {/* Middle Pages */}
+                  {Array.from({ length: currentBookContent.pages.length }, (_, i) => i)
                     .filter(i => i >= start && i <= end)
                     .map(i => (
                       <button
@@ -346,15 +392,15 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
 
                   {/* Last Page */}
                   <button
-                    onClick={() => goToPage(lastIndex)}
+                    onClick={() => goToPage(currentBookContent.pages.length - 1)}
                     disabled={isFlipping}
                     className={`min-w-[32px] h-8 px-2 rounded text-sm font-medium transition-colors ${
-                      currentPageIndex === lastIndex
+                      currentPageIndex === currentBookContent.pages.length - 1
                         ? 'bg-primary text-primary-foreground'
                         : 'bg-muted hover:bg-accent text-muted-foreground hover:text-accent-foreground'
                     }`}
                   >
-                    {total}
+                    {currentBookContent.pages.length}
                   </button>
                 </>
               ) : (
