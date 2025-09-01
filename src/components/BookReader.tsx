@@ -293,22 +293,85 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
               <ArrowLeft className="h-4 w-4" />
               Previous
             </Button>
-            <div className="flex items-center gap-1">
-              {currentBookContent.pages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToPage(index)}
-                  disabled={isFlipping}
-                  className={`min-w-[32px] h-8 px-2 rounded text-sm font-medium transition-colors ${
-                    index === currentPageIndex
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted hover:bg-accent text-muted-foreground hover:text-accent-foreground'
-                  }`}
-                >
-                  {index + 1}
-                </button>
-              ))}
+
+            {/* ✅ Fixed Pagination with Ellipsis */}
+            <div className="flex items-center gap-1 flex-wrap justify-center">
+              {currentBookContent.pages.length > 20 ? (
+                <>
+                  {/* First Page */}
+                  <button
+                    onClick={() => goToPage(0)}
+                    disabled={isFlipping}
+                    className={`min-w-[32px] h-8 px-2 rounded text-sm font-medium transition-colors ${
+                      currentPageIndex === 0
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-muted hover:bg-accent text-muted-foreground hover:text-accent-foreground'
+                    }`}
+                  >
+                    1
+                  </button>
+
+                  {/* Left Ellipsis */}
+                  {currentPageIndex > 4 && <span className="px-2">…</span>}
+
+                  {/* Middle Pages */}
+                  {Array.from({ length: currentBookContent.pages.length }, (_, i) => i)
+                    .filter(
+                      i =>
+                        i === currentPageIndex ||
+                        (i >= currentPageIndex - 2 && i <= currentPageIndex + 2)
+                    )
+                    .map(i => (
+                      <button
+                        key={i}
+                        onClick={() => goToPage(i)}
+                        disabled={isFlipping}
+                        className={`min-w-[32px] h-8 px-2 rounded text-sm font-medium transition-colors ${
+                          i === currentPageIndex
+                            ? 'bg-primary text-primary-foreground'
+                            : 'bg-muted hover:bg-accent text-muted-foreground hover:text-accent-foreground'
+                        }`}
+                      >
+                        {i + 1}
+                      </button>
+                    ))}
+
+                  {/* Right Ellipsis */}
+                  {currentPageIndex < currentBookContent.pages.length - 5 && (
+                    <span className="px-2">…</span>
+                  )}
+
+                  {/* Last Page */}
+                  <button
+                    onClick={() => goToPage(currentBookContent.pages.length - 1)}
+                    disabled={isFlipping}
+                    className={`min-w-[32px] h-8 px-2 rounded text-sm font-medium transition-colors ${
+                      currentPageIndex === currentBookContent.pages.length - 1
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-muted hover:bg-accent text-muted-foreground hover:text-accent-foreground'
+                    }`}
+                  >
+                    {currentBookContent.pages.length}
+                  </button>
+                </>
+              ) : (
+                currentBookContent.pages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToPage(index)}
+                    disabled={isFlipping}
+                    className={`min-w-[32px] h-8 px-2 rounded text-sm font-medium transition-colors ${
+                      index === currentPageIndex
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-muted hover:bg-accent text-muted-foreground hover:text-accent-foreground'
+                    }`}
+                  >
+                    {index + 1}
+                  </button>
+                ))
+              )}
             </div>
+
             <Button
               onClick={nextPage}
               disabled={currentPageIndex === currentBookContent.pages.length - 1 || isFlipping}
