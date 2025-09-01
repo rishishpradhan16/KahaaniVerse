@@ -18,6 +18,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
   const { dispatch } = useBooks();
   const { toast } = useToast();
   const isMobile = useIsMobile();
+
   const [currentLanguage, setCurrentLanguage] = useState<Language>('english');
   const [isFlipping, setIsFlipping] = useState(false);
   const [isLanguagePopoverOpen, setIsLanguagePopoverOpen] = useState(false);
@@ -162,6 +163,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
 
   const nextPage = () => nextPageStable();
   const prevPage = () => prevPageStable();
+
   const goToPage = (index: number) => {
     if (index >= 0 && index < currentBookContent.pages.length) {
       if (flipTimeoutRef.current) clearTimeout(flipTimeoutRef.current);
@@ -173,15 +175,16 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
 
   // ✅ Swipe gestures
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchStartY.current = e.touches[0].clientY;
+    touchStartX.current = e.touches.clientX;
+    touchStartY.current = e.touches.clientY;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const touchEndY = e.changedTouches[0].clientY;
+    const touchEndX = e.changedTouches.clientX;
+    const touchEndY = e.changedTouches.clientY;
     const deltaX = touchStartX.current - touchEndX;
     const deltaY = touchStartY.current - touchEndY;
+
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
       if (deltaX > 0) nextPageStable(); // left swipe
       else prevPageStable(); // right swipe
@@ -199,6 +202,12 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
 
   if (!currentPage) return null;
 
+  // ===== FIX: compute a safe window that excludes first(0) and last(lastIndex) =====
+  const total = currentBookContent.pages.length;
+  const lastIndex = total - 1;
+  const start = Math.max(1, currentPageIndex - 2);
+  const end = Math.min(lastIndex - 1, currentPageIndex + 2);
+  // ================================================================================
   return (
     <div
       ref={readerRef}
@@ -312,15 +321,11 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                   </button>
 
                   {/* Left Ellipsis */}
-                  {currentPageIndex > 4 && <span className="px-2">…</span>}
+                  {start > 1 && <span className="px-2">…</span>}
 
-                  {/* Middle Pages */}
-                  {Array.from({ length: currentBookContent.pages.length }, (_, i) => i)
-                    .filter(
-                      i =>
-                        i === currentPageIndex ||
-                        (i >= currentPageIndex - 2 && i <= currentPageIndex + 2)
-                    )
+                  {/* Middle Pages (exclude first and last to prevent duplicates) */}
+                  {Array.from({ length: total }, (_, i) => i)
+                    .filter(i => i >= start && i <= end)
                     .map(i => (
                       <button
                         key={i}
@@ -337,21 +342,19 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
                     ))}
 
                   {/* Right Ellipsis */}
-                  {currentPageIndex < currentBookContent.pages.length - 5 && (
-                    <span className="px-2">…</span>
-                  )}
+                  {end < lastIndex - 1 && <span className="px-2">…</span>}
 
                   {/* Last Page */}
                   <button
-                    onClick={() => goToPage(currentBookContent.pages.length - 1)}
+                    onClick={() => goToPage(lastIndex)}
                     disabled={isFlipping}
                     className={`min-w-[32px] h-8 px-2 rounded text-sm font-medium transition-colors ${
-                      currentPageIndex === currentBookContent.pages.length - 1
+                      currentPageIndex === lastIndex
                         ? 'bg-primary text-primary-foreground'
                         : 'bg-muted hover:bg-accent text-muted-foreground hover:text-accent-foreground'
                     }`}
                   >
-                    {currentBookContent.pages.length}
+                    {total}
                   </button>
                 </>
               ) : (
