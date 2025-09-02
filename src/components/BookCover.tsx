@@ -31,7 +31,7 @@ export const BookCover: React.FC<BookCoverProps> = ({ book, onBack, onStartReadi
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={onBack}
-          className="absolute top-6 left-6 flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+          className="absolute top-6 left-6 z-20 flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to Library</span>
@@ -42,9 +42,9 @@ export const BookCover: React.FC<BookCoverProps> = ({ book, onBack, onStartReadi
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.1 }}
-          className="relative"
+          className="relative mt-14 md:mt-0"
         >
-          <div className="w-48 h-[45vh] md:w-80 md:h-[480px] max-h-[300px] md:max-h-none rounded-lg overflow-hidden shadow-book hover:shadow-glow transition-shadow duration-500">
+          <div className="w-40 h-[38vh] md:w-80 md:h-[480px] max-h-[260px] md:max-h-none rounded-lg overflow-hidden shadow-book hover:shadow-glow transition-shadow duration-500">
             <img
               src={book.cover}
               alt={book.title}

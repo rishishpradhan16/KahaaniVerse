@@ -202,7 +202,7 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
           <span className="hidden md:inline">Close Book</span>
         </button>
         <div className="text-center">
-          <h1 className="text-lg font-semibold text-foreground">{currentBookContent.title}</h1>
+          <h1 className="text-lg font-semibold text-foreground">{book.title}</h1>
           <p className="text-sm text-muted-foreground">
             Page {currentPage.pageNumber} of {currentBookContent.pages.length}
           </p>
