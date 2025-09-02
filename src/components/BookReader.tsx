@@ -196,14 +196,14 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
       onTouchEnd={handleTouchEnd}
     >
       {/* Header */}
-      <div className="flex items-center justify-between p-6 border-b border-border">
+      <div className="relative flex items-center justify-between p-6 border-b border-border">
         <button onClick={onBack} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
           <X className="h-5 w-5" />
           <span className="hidden md:inline">Close Book</span>
         </button>
-        <div className="text-center">
-          <h1 className="text-lg font-semibold text-foreground">{book.title}</h1>
-          <p className="text-sm text-muted-foreground">
+        <div className="absolute left-1/2 -translate-x-1/2 text-center md:static md:transform-none">
+          <h1 className="text-base leading-snug font-semibold text-foreground md:text-lg md:leading-normal">{book.title}</h1>
+          <p className="text-xs text-muted-foreground md:text-sm">
             Page {currentPage.pageNumber} of {currentBookContent.pages.length}
           </p>
         </div>
