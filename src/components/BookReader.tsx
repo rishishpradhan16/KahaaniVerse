@@ -201,9 +201,9 @@ export const BookReader: React.FC<BookReaderProps> = ({ book, onBack }) => {
           <X className="h-5 w-5" />
           <span className="hidden md:inline">Close Book</span>
         </button>
-        <div className="absolute left-1/2 -translate-x-1/2 text-center md:static md:transform-none">
-          <h1 className="text-base leading-snug font-semibold text-foreground md:text-lg md:leading-normal">{book.title}</h1>
-          <p className="text-xs text-muted-foreground md:text-sm">
+        <div className="absolute left-1/2 -translate-x-1/2 text-center md:static md:transform-none max-w-[70%] md:max-w-none px-2 pointer-events-none">
+          <h1 className="text-sm leading-snug font-semibold text-foreground md:text-lg md:leading-normal">{book.title}</h1>
+          <p className="text-[11px] text-muted-foreground md:text-sm">
             Page {currentPage.pageNumber} of {currentBookContent.pages.length}
           </p>
         </div>
