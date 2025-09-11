@@ -11,39 +11,40 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Disclaimer from "./pages/Disclaimer";
 import NotFound from "./pages/NotFound";
-import { useForceBackHome } from "./hooks/useForceBackHome"; // 👈 new hook
+import { useForceBackHome } from "./hooks/useForceBackHome"; // 👈 import
 
 const queryClient = new QueryClient();
 
-const App = () => {
-  // 👇 yeh line se back button globally override hoga
-  useForceBackHome();
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      <MobileNavProvider>
-        <BookProvider>
-          <TooltipProvider>
-            <div className="dark">
-              <Toaster />
-              <Sonner />
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/disclaimer" element={<Disclaimer />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </BrowserRouter>
-            </div>
-          </TooltipProvider>
-        </BookProvider>
-      </MobileNavProvider>
-    </QueryClientProvider>
-  );
-};
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <MobileNavProvider>
+      <BookProvider>
+        <TooltipProvider>
+          <div className="dark">
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <BackHandlerWrapper />   {/* 👈 yaha se hook call hoga */}
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/disclaimer" element={<Disclaimer />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
+        </TooltipProvider>
+      </BookProvider>
+    </MobileNavProvider>
+  </QueryClientProvider>
+);
 
 export default App;
+
+// 👇 Ek chhota wrapper component jo BrowserRouter ke andar hai
+function BackHandlerWrapper() {
+  useForceBackHome();
+  return null;
+}
