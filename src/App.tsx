@@ -1,3 +1,4 @@
+// App.tsx
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,7 +16,6 @@ import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
-// 🔑 Global back handler wrapper
 const AppWithBackHandler = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,10 +23,10 @@ const AppWithBackHandler = () => {
   useEffect(() => {
     const handlePopState = () => {
       if (window.history.length > 1) {
-        // Normal back
-        window.history.back();
+        // ✅ use react-router navigate instead of raw window.history
+        navigate(-1);
       } else {
-        // Fallback logic if user lands directly
+        // fallback rules when no previous history exists
         if (location.pathname.startsWith("/book/")) {
           const bookId = location.pathname.split("/book/")[1];
           navigate(`/preview/${bookId}`, { replace: true });
