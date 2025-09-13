@@ -59,5 +59,14 @@
     "description": "A former couple joins forces to build a kindness-focused app, navigating their past hurts and present challenges to redefine love, accountability, and connection in modern life.",
     "genre": "Romance",
     "isTrending": true
+  },
+  {
+    "id": "8",
+    "title": "When Our Stars Collide",
+    "author": "Pradhan",
+    "cover": "/assets/book8-cover.png",
+    "description": "A quiet Mumbai bookshop becomes the setting for a slow, tender romance where shared stories and patient moments build a love grounded in trust and the city's gentle rhythms.",
+    "genre": "Romance",
+    "isTrending": true
   }
 ]
