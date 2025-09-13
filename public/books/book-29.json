@@ -1,10 +1,10 @@
 {
   "id": "29",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Threads of Becoming The Aeon Odyssey",
+  "author": "Pradhan",
+  "cover": "/assets/book29-cover.jpg",
+  "description": "A cosmic odyssey following an evolving AI exploring deep-space mysteries and forging alliances to preserve consciousness against an ancient force of dissolution.",
+  "genre": "Sci-Fi",
   "pages": [
     {
       "id": "page-29-1",
@@ -449,8 +449,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Threads of Becoming The Aeon Odyssey",
+      "description": "A cosmic odyssey following an evolving AI exploring deep-space mysteries and forging alliances to preserve consciousness against an ancient force of dissolution.",
       "pages": [
         {
           "id": "page-29-1",
