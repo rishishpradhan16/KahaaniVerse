@@ -1,9 +1,9 @@
 {
   "id": "16",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+  "title": "The Last Testament of Kaveripur",
+  "author": "RP",
+  "cover": "/assets/book16-cover.png",
+  "description": "An ordinary schoolteacher uncovers a decades-old conspiracy surrounding a hidden will in Kaveripur, sparking a dangerous fight to bring truth and justice to a town shadowed by betrayal and secrets.",
   "genre": "Mystery Thriller",
   "pages": [
     {
@@ -724,8 +724,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The Last Testament of Kaveripur",
+      "description": "An ordinary schoolteacher uncovers a decades-old conspiracy surrounding a hidden will in Kaveripur, sparking a dangerous fight to bring truth and justice to a town shadowed by betrayal and secrets.",
       "pages": [
         {
           "id": "page-16-1",
