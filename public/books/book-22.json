@@ -1,10 +1,10 @@
 {
   "id": "22",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Ash Line",
+  "author": "Pradhan",
+  "cover": "/assets/book22-cover.png",
+  "description": "A quiet night shift crew navigates the hidden, haunted maintenance of a city’s forgotten metro line.",
+  "genre": "Horror",
   "pages": [
     {
       "id": "page-22-1",
@@ -629,8 +629,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Ash Line",
+      "description": "A quiet night shift crew navigates the hidden, haunted maintenance of a city’s forgotten metro line.",
       "pages": [
         {
           "id": "page-22-1",
