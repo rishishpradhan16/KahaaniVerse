@@ -1,10 +1,10 @@
 {
   "id": "8",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "When Our Stars Collide",
+  "author": "Pradhan",
+  "cover": "/assets/book8-cover.png",
+  "description": "A quiet Mumbai bookshop becomes the setting for a slow, tender romance where shared stories and patient moments build a love grounded in trust and the city's gentle rhythms.",
+  "genre": "Romance",
   "pages": [
     {
       "id": "page-8-1",
@@ -744,8 +744,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "When Our Stars Collide",
+      "description": "A quiet Mumbai bookshop becomes the setting for a slow, tender romance where shared stories and patient moments build a love grounded in trust and the city's gentle rhythms.",
       "pages": [
         {
           "id": "page-8-1",
