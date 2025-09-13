@@ -1,10 +1,10 @@
 {
   "id": "6",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Hearts of Kshiravathi",
+  "author": "Rishi",
+  "cover": "/assets/book6-cover.png",
+  "description": "A secret love in Kshiravathi defies political intrigue and family opposition to triumph against all odds.",
+  "genre": "Romance",
   "pages": [
     {
       "id": "page-6-1",
@@ -449,8 +449,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Hearts of Kshiravathi",
+      "description": "A secret love in Kshiravathi defies political intrigue and family opposition to triumph against all odds.",
       "pages": [
         {
           "id": "page-6-1",
