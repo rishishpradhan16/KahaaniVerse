@@ -1,10 +1,10 @@
 {
   "id": "28",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "The Luminous Veil",
+  "author": "Pradhan",
+  "cover": "/assets/book28-cover.png",
+  "description": "A dimension-spanning epic of a guardian merging with a sentient energy veil to defend reality against evolving interdimensional invaders called the Veyth.",
+  "genre": "Sci-Fi",
   "pages": [
     {
       "id": "page-28-1",
@@ -869,8 +869,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The Luminous Veil",
+      "description": "A dimension-spanning epic of a guardian merging with a sentient energy veil to defend reality against evolving interdimensional invaders called the Veyth.",
       "pages": [
         {
           "id": "page-28-1",
