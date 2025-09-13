@@ -1,10 +1,10 @@
 {
   "id": "9",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "When We Fell In Love Again",
+  "author": "Rishi Pradhan",
+  "cover": "/assets/book9-cover.png",
+  "description": "Childhood friends reunite in Delhi’s chaos, battling family pressures and fears to rediscover love anew.",
+  "genre": "Romance",
   "pages": [
     {
       "id": "page-9-1",
@@ -174,8 +174,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "When We Fell in Love Again",
+      "description": "Childhood friends reunite in Delhi’s chaos, battling family pressures and fears to rediscover love anew.",
       "pages": [
         {
           "id": "page-9-1",
