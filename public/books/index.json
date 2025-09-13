@@ -41,5 +41,14 @@
     "description": "DHARANA: The Art of Conscious Flow by Rishish Pradhan",
     "genre": "Drama / Philosophy",
     "isTrending": true
+  },
+  {
+    "id": "6",
+    "title": "Hearts of Kshiravathi",
+    "author": "Rishi",
+    "cover": "/assets/book6-cover.png",
+    "description": "A secret love in Kshiravathi defies political intrigue and family opposition to triumph against all odds.",
+    "genre": "Romance",
+    "isTrending": true
   }
 ]
