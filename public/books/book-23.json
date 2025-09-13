@@ -1,10 +1,10 @@
 {
   "id": "23",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Kothivaram",
+  "author": "RP",
+  "cover": "/assets/book23-cover.png",
+  "description": "A woman returns to a cursed village to confront an ancient, bloodthirsty well, breaking a cycle of sacrifice through courage, truth, and remembrance.",
+  "genre": "Horror",
   "pages": [
     {
       "id": "page-23-1",
@@ -379,8 +379,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Kothivaram",
+      "description": "A woman returns to a cursed village to confront an ancient, bloodthirsty well, breaking a cycle of sacrifice through courage, truth, and remembrance.",
       "pages": [
         {
           "id": "page-23-1",
