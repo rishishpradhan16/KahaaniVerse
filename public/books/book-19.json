@@ -1,10 +1,10 @@
 {
   "id": "19",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Borrowed Face",
+  "author": "RPradhan",
+  "cover": "/assets/book19-cover.png",
+  "description": "A man trapped in shifting identities struggles to reclaim honesty and self amidst fractured lives and the masks he wears.",
+  "genre": "Short Stories",
   "pages": [
     {
       "id": "page-19-1",
@@ -119,8 +119,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Borrowed Face",
+      "description": "A man trapped in shifting identities struggles to reclaim honesty and self amidst fractured lives and the masks he wears.",
       "pages": [
         {
           "id": "page-19-1",
