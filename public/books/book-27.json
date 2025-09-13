@@ -1,10 +1,10 @@
 {
   "id": "27",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "The Fractured Horizon",
+  "author": "RP",
+  "cover": "/assets/book27-cover.jpg",
+  "description": "A tense space race thriller where a scientist deciphers a cryptic alien signal leading to a mysterious Kuiper Belt dwarf planet harboring ancient cosmic intelligence.",
+  "genre": "Sci-Fi",
   "pages": [
     {
       "id": "page-27-1",
@@ -434,8 +434,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The Fractured Horizon",
+      "description": "A tense space race thriller where a scientist deciphers a cryptic alien signal leading to a mysterious Kuiper Belt dwarf planet harboring ancient cosmic intelligence.",
       "pages": [
         {
           "id": "page-27-1",
