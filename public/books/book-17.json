@@ -1,9 +1,9 @@
 {
   "id": "17",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+  "title": "The Vanishing Lotus",
+  "author": "Rishish Pradhan",
+  "cover": "/assets/book17-cover.png",
+  "description": "A determined inspector and his allies navigate ancient trials and deadly conspiracies to protect a mystical artifact that holds the fate of their city.",
   "genre": "Mystery Thriller",
   "pages": [
     {
@@ -359,8 +359,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The Vanishing Lotus",
+      "description": "A determined inspector and his allies navigate ancient trials and deadly conspiracies to protect a mystical artifact that holds the fate of their city.",
       "pages": [
         {
           "id": "page-17-1",
