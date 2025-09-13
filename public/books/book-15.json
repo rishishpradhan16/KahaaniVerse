@@ -1,9 +1,9 @@
 {
   "id": "15",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+  "title": "Silent Verdict",
+  "author": "Pradhan",
+  "cover": "/assets/book15-cover.png",
+  "description": "Detective Mara Ellison uncovers a deadly international syndicate threatening justice and fights to expose a vast web of corruption before its apocalyptic purge, The Ninth Judgment, unfolds.",
   "genre": "Mystery Thriller",
   "pages": [
     {
@@ -144,8 +144,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Silent Verdict",
+      "description": "Detective Mara Ellison uncovers a deadly international syndicate threatening justice and fights to expose a vast web of corruption before its apocalyptic purge, The Ninth Judgment, unfolds.",
       "pages": [
         {
           "id": "page-15-1",
