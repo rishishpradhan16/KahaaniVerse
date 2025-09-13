@@ -5,8 +5,7 @@
     "author": "Elena Mysticwind",
     "cover": "/assets/book1-cover.jpg",
     "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-    "genre": "Mystery Thriller",
-    "isTrending": true
+    "genre": "Mystery Thriller"
   },
   {
     "id": "2",
@@ -30,8 +29,7 @@
     "author": "Dr. Maya Patel",
     "cover": "/assets/book1-cover.jpg",
     "description": "A scientist discovers a garden where quantum physics and consciousness intertwine.",
-    "genre": "Sci-Fi",
-    "isTrending": true
+    "genre": "Sci-Fi"
   },
   {
     "id": "5",
@@ -86,5 +84,22 @@
     "description": "Amidst Rajasthan’s monsoon magic, two hearts dare to love despite shadows of debt and past burdens.",
     "genre": "Romance",
     "isTrending": true
+  },
+  {
+   "id": "11",
+    "title": "The Hollow Hour",
+    "author": "Tryouts",
+    "cover": "/assets/book11-cover.png",
+    "description": "A meticulously timed bank heist murders three, revealing an invisible web of control weaving through a small town’s heart and haunting its rhythm.",
+    "genre": "True Crime / Realistic Fiction",
+    "isTrending": true
+  },
+  {
+   "id": "12",
+    "title": "The Quiet Ones",
+    "author": "Tryouts",
+    "cover": "/assets/book12-cover.png",
+    "description": "In a sleepy town shattered by a brutal family murder, a mother and detective uncover a shadowy network manipulating lives with chilling precision",
+    "genre": "True Crime / Realistic Fiction"
   }
 ]
