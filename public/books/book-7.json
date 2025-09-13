@@ -1,10 +1,10 @@
 {
   "id": "7",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Aaj Kal Tum",
+  "author": "Pradhan",
+  "cover": "/assets/book7-cover.png",
+  "description": "A former couple joins forces to build a kindness-focused app, navigating their past hurts and present challenges to redefine love, accountability, and connection in modern life.",
+  "genre": "Romance",
   "pages": [
     {
       "id": "page-7-1",
@@ -519,8 +519,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Aaj Kal Tum",
+      "description": "A former couple joins forces to build a kindness-focused app, navigating their past hurts and present challenges to redefine love, accountability, and connection in modern life.",
       "pages": [
         {
           "id": "page-7-1",
