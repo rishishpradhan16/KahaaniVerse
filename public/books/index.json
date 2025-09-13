@@ -205,5 +205,37 @@
     "cover": "/assets/book25-cover.png",
     "description": "A reluctant heir embraces his role as keeper to confront ancestral curses and restless spirits tied to an ancient banyan tree, seeking to restore balance to his village.",
     "genre": "Horror"
+  },
+  {
+   "id": "26",
+    "title": "The Eternal Circuit",
+    "author": "Pradhan",
+    "cover": "/assets/book26-cover.png",
+    "description": "A sci-fi saga about awakened human vessels unlocking and guiding an ancient planetary consciousness weaving energy, memory, and destiny.",
+    "genre": "Sci-Fi"
+  },
+  {
+   "id": "27",
+    "title": "WThe Fractured Horizon",
+    "author": "RP",
+    "cover": "/assets/book27-cover.png",
+    "description": "A tense space race thriller where a scientist deciphers a cryptic alien signal leading to a mysterious Kuiper Belt dwarf planet harboring ancient cosmic intelligence.",
+    "genre": "Sci-Fi"
+  },
+  {
+   "id": "28",
+    "title": "The Luminous Veil",
+    "author": "Pradhan",
+    "cover": "/assets/book28-cover.png",
+    "description": "A dimension-spanning epic of a guardian merging with a sentient energy veil to defend reality against evolving interdimensional invaders called the Veyth..",
+    "genre": "Sci-Fi"
+  },
+  {
+   "id": "29",
+    "title": "Threads of Becoming The Aeon Odyssey",
+    "author": "Pradhan",
+    "cover": "/assets/book29-cover.png",
+    "description": "A cosmic odyssey following an evolving AI exploring deep-space mysteries and forging alliances to preserve consciousness against an ancient force of dissolution.",
+    "genre": "Sci-Fi"
   }
 ]
