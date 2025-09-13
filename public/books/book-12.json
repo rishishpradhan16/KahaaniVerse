@@ -1,10 +1,10 @@
 {
   "id": "12",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "The Quiet Ones",
+  "author": "Tryouts",
+  "cover": "/assets/book12-cover.png",
+  "description": "In a sleepy town shattered by a brutal family murder, a mother and detective uncover a shadowy network manipulating lives with chilling precision.",
+  "genre": "True Crime / Realistic Fiction",
   "pages": [
     {
       "id": "page-12-1",
@@ -219,8 +219,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The Quiet Ones",
+      "description": "In a sleepy town shattered by a brutal family murder, a mother and detective uncover a shadowy network manipulating lives with chilling precision.",
       "pages": [
         {
           "id": "page-12-1",
