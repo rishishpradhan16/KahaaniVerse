@@ -173,5 +173,37 @@
     "cover": "/assets/book21-cover.png",
     "description": "A struggling writer discovers a mysterious journal that writes her life in real time, forcing her to confront a dark future shaped by her own choices.",
     "genre": "Short Stories"
+  },
+  {
+   "id": "22",
+    "title": "Ash Line",
+    "author": "Pradhan",
+    "cover": "/assets/book22-cover.png",
+    "description": "A quiet night shift crew navigates the hidden, haunted maintenance of a city’s forgotten metro line.",
+    "genre": "Horror"
+  },
+  {
+   "id": "23",
+    "title": "Kothivaram",
+    "author": "RP",
+    "cover": "/assets/book23-cover.png",
+    "description": "A woman returns to a cursed village to confront an ancient, bloodthirsty well, breaking a cycle of sacrifice through courage, truth, and remembrance.",
+    "genre": "Horror"
+  },
+  {
+   "id": "24",
+    "title": "Dark Thrill",
+    "author": "Pradhan",
+    "cover": "/assets/book24-cover.png",
+    "description": "A woman returns to a haunted town to confront a river-bound curse, unraveling ancient bargains through courage, remembrance, and collective reckoning.",
+    "genre": "Horror"
+  },
+  {
+   "id": "25",
+    "title": "Whispers of the Banyan Tree",
+    "author": "RP",
+    "cover": "/assets/book25-cover.png",
+    "description": "A reluctant heir embraces his role as keeper to confront ancestral curses and restless spirits tied to an ancient banyan tree, seeking to restore balance to his village.",
+    "genre": "Horror"
   }
 ]
