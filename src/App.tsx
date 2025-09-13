@@ -41,6 +41,3 @@ const App = () => (
 );
 
 export default App;
-
-
-this is my app.tsx file so without touching/omitting any other existing code or functionality implement that 
