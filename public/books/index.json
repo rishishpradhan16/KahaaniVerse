@@ -149,5 +149,29 @@
     "cover": "/assets/book18-cover.png",
     "description": "A young woman uncovers an ancient secret wrapped in cryptic puzzles and deadly conspiracies, forcing her to become the guardian of a hidden legacy that could alter history.",
     "genre": "Mystery Thriller"
+  },
+  {
+   "id": "19",
+    "title": "Borrowed Face",
+    "author": "RPradhan",
+    "cover": "/assets/book19-cover.png",
+    "description": "A man trapped in shifting identities struggles to reclaim honesty and self amidst fractured lives and the masks he wears.",
+    "genre": "Short Stories"
+  },
+  {
+   "id": "20",
+    "title": "The House That Eats Its Dead",
+    "author": "RPradhan",
+    "cover": "/assets/book20-cover.png",
+    "description": "A woman returns to her haunted childhood home, battling a living house’s sinister hunger for memories, names, and reflections to reclaim her family’s lost past.",
+    "genre": "Short Stories"
+  },
+  {
+   "id": "21",
+    "title": "The Book That Wrote Back",
+    "author": "Pradhan",
+    "cover": "/assets/book21-cover.png",
+    "description": "A struggling writer discovers a mysterious journal that writes her life in real time, forcing her to confront a dark future shaped by her own choices.",
+    "genre": "Short Stories"
   }
 ]
