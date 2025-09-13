@@ -1,10 +1,10 @@
 {
   "id": "24",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Dark Thrill",
+  "author": "Pradhan",
+  "cover": "/assets/book24-cover.jpg",
+  "description": "A woman returns to a haunted town to confront a river-bound curse, unraveling ancient bargains through courage, remembrance, and collective reckoning.",
+  "genre": "Horror",
   "pages": [
     {
       "id": "page-24-1",
@@ -739,8 +739,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Dark Thrill",
+      "description": "A woman returns to a haunted town to confront a river-bound curse, unraveling ancient bargains through courage, remembrance, and collective reckoning.",
       "pages": [
         {
           "id": "page-24-1",
