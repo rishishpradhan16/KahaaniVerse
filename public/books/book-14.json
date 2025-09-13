@@ -1,9 +1,9 @@
 {
   "id": "14",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+  "title": "Silent Cipher",
+  "author": "RP",
+  "cover": "/assets/book14-cover.png",
+  "description": "A brilliant software tester uncovers a hidden backdoor in a global security system, sparking a tense race against time to stop a catastrophic cyberattack and expose a shadowy international conspiracy",
   "genre": "Mystery Thriller",
   "pages": [
     {
@@ -334,8 +334,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Silent Cipher",
+      "description": "A brilliant software tester uncovers a hidden backdoor in a global security system, sparking a tense race against time to stop a catastrophic cyberattack and expose a shadowy international conspiracy",
       "pages": [
         {
           "id": "page-14-1",
