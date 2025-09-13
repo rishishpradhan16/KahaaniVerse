@@ -1,9 +1,9 @@
 {
   "id": "18",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+  "title": "Vanishing Point",
+  "author": "Tryouts",
+  "cover": "/assets/book18-cover.png",
+  "description": "A young woman uncovers an ancient secret wrapped in cryptic puzzles and deadly conspiracies, forcing her to become the guardian of a hidden legacy that could alter history.",
   "genre": "Mystery Thriller",
   "pages": [
     {
@@ -204,8 +204,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Vanishing Point",
+      "description": "A young woman uncovers an ancient secret wrapped in cryptic puzzles and deadly conspiracies, forcing her to become the guardian of a hidden legacy that could alter history.",
       "pages": [
         {
           "id": "page-18-1",
