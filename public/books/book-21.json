@@ -1,10 +1,10 @@
 {
   "id": "21",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "The Book That Wrote Back",
+  "author": "Pradhan",
+  "cover": "/assets/book21-cover.png",
+  "description": "A struggling writer discovers a mysterious journal that writes her life in real time, forcing her to confront a dark future shaped by her own choices.",
+  "genre": "Short Stories",
   "pages": [
     {
       "id": "page-21-1",
@@ -74,8 +74,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The Book That Wrote Back",
+      "description": "A struggling writer discovers a mysterious journal that writes her life in real time, forcing her to confront a dark future shaped by her own choices.",
       "pages": [
         {
           "id": "page-21-1",
