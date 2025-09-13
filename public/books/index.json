@@ -68,5 +68,21 @@
     "description": "A quiet Mumbai bookshop becomes the setting for a slow, tender romance where shared stories and patient moments build a love grounded in trust and the city's gentle rhythms.",
     "genre": "Romance",
     "isTrending": true
+  },
+   "id": "9",
+    "title": "When We Fell in Love Again",
+    "author": "Rishi Pradhan",
+    "cover": "/assets/book9-cover.png",
+    "description": "Childhood friends reunite in Delhi’s chaos, battling family pressures and fears to rediscover love anew.",
+    "genre": "Romance",
+    "isTrending": true
+  },
+   "id": "10",
+    "title": "Whispers of the Monsoon Heart",
+    "author": "Pradhan",
+    "cover": "/assets/book10-cover.png",
+    "description": "Amidst Rajasthan’s monsoon magic, two hearts dare to love despite shadows of debt and past burdens.",
+    "genre": "Romance",
+    "isTrending": true
   }
 ]
