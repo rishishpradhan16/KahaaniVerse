@@ -1,10 +1,10 @@
 {
   "id": "10",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Whispers of the Monsoon Heart",
+  "author": "Pradhan",
+  "cover": "/assets/book10-cover.png",
+  "description": "Amidst Rajasthan’s monsoon magic, two hearts dare to love despite shadows of debt and past burdens.",
+  "genre": "Romance",
   "pages": [
     {
       "id": "page-10-1",
@@ -629,8 +629,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Whispers of the Monsoon Hearts",
+      "description": "Amidst Rajasthan’s monsoon magic, two hearts dare to love despite shadows of debt and past burdens.",
       "pages": [
         {
           "id": "page-10-1",
