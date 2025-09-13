@@ -1,10 +1,10 @@
 {
   "id": "26",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "The Eternal Circuit",
+  "author": "Pradhan",
+  "cover": "/assets/book26-cover.jpg",
+  "description": "A sci-fi saga about awakened human vessels unlocking and guiding an ancient planetary consciousness weaving energy, memory, and destiny.",
+  "genre": "Sci-Fi",
   "pages": [
     {
       "id": "page-26-1",
@@ -504,8 +504,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The Eternal Circuit",
+      "description": "A sci-fi saga about awakened human vessels unlocking and guiding an ancient planetary consciousness weaving energy, memory, and destiny.",
       "pages": [
         {
           "id": "page-26-1",
