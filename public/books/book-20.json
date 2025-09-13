@@ -1,10 +1,10 @@
 {
   "id": "20",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "The House That Eats Its Dead",
+  "author": "RPradhan",
+  "cover": "/assets/book20-cover.png",
+  "description": "A woman returns to her haunted childhood home, battling a living house’s sinister hunger for memories, names, and reflections to reclaim her family’s lost past.",
+  "genre": "Short Stories",
   "pages": [
     {
       "id": "page-20-1",
@@ -119,8 +119,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The House That Eats Its Dead",
+      "description": "A woman returns to her haunted childhood home, battling a living house’s sinister hunger for memories, names, and reflections to reclaim her family’s lost past.",
       "pages": [
         {
           "id": "page-20-1",
