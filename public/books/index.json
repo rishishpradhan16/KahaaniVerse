@@ -50,5 +50,14 @@
     "description": "A secret love in Kshiravathi defies political intrigue and family opposition to triumph against all odds.",
     "genre": "Romance",
     "isTrending": true
+  },
+  {
+    "id": "7",
+    "title": "Aaj Kal Tum",
+    "author": "Pradhan",
+    "cover": "/assets/book7-cover.png",
+    "description": "A former couple joins forces to build a kindness-focused app, navigating their past hurts and present challenges to redefine love, accountability, and connection in modern life.",
+    "genre": "Romance",
+    "isTrending": true
   }
 ]
