@@ -1,9 +1,9 @@
 {
   "id": "13",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+  "title": "Shadows Over Ashapur",
+  "author": "RP",
+  "cover": "/assets/book13-cover.png",
+  "description": "A gripping tale of an inspector uncovering ancient secrets, political conspiracies, and hidden dangers in a village on the brink of darkness.",
   "genre": "Mystery Thriller",
   "pages": [
     {
@@ -204,8 +204,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Shadows Over Ashapur",
+      "description": "A gripping tale of an inspector uncovering ancient secrets, political conspiracies, and hidden dangers in a village on the brink of darkness",
       "pages": [
         {
           "id": "page-13-1",
