@@ -101,5 +101,53 @@
     "cover": "/assets/book12-cover.png",
     "description": "In a sleepy town shattered by a brutal family murder, a mother and detective uncover a shadowy network manipulating lives with chilling precision",
     "genre": "True Crime / Realistic Fiction"
+  },
+  {
+   "id": "13",
+    "title": "Shadows Over Ashapur",
+    "author": "RP",
+    "cover": "/assets/book13-cover.png",
+    "description": "A gripping tale of an inspector uncovering ancient secrets, political conspiracies, and hidden dangers in a village on the brink of darkness.",
+    "genre": "Mystery Thriller"
+  },
+  {
+   "id": "14",
+    "title": "Silent Cipher",
+    "author": "RP",
+    "cover": "/assets/book14-cover.png",
+    "description": "A brilliant software tester uncovers a hidden backdoor in a global security system, sparking a tense race against time to stop a catastrophic cyberattack and expose a shadowy international conspiracy",
+    "genre": "Mystery Thriller"
+  },
+  {
+   "id": "15",
+    "title": "Silent Verdict",
+    "author": "Pradhan",
+    "cover": "/assets/book15-cover.png",
+    "description": "Detective Mara Ellison uncovers a deadly international syndicate threatening justice and fights to expose a vast web of corruption before its apocalyptic purge, The Ninth Judgment, unfolds.",
+    "genre": "Mystery Thriller"
+  },
+  {
+   "id": "16",
+    "title": "The Last Testament of Kaveripur",
+    "author": "RP",
+    "cover": "/assets/book16-cover.png",
+    "description": "An ordinary schoolteacher uncovers a decades-old conspiracy surrounding a hidden will in Kaveripur, sparking a dangerous fight to bring truth and justice to a town shadowed by betrayal and secrets.",
+    "genre": "Mystery Thriller"
+  },
+  {
+   "id": "17",
+    "title": "The Vanishing Lotus",
+    "author": "Rishish Pradhan",
+    "cover": "/assets/book17-cover.png",
+    "description": "A determined inspector and his allies navigate ancient trials and deadly conspiracies to protect a mystical artifact that holds the fate of their city.",
+    "genre": "Mystery Thriller"
+  },
+  {
+   "id": "18",
+    "title": "Vanishing Point",
+    "author": "Tryouts",
+    "cover": "/assets/book18-cover.png",
+    "description": "A young woman uncovers an ancient secret wrapped in cryptic puzzles and deadly conspiracies, forcing her to become the guardian of a hidden legacy that could alter history.",
+    "genre": "Mystery Thriller"
   }
 ]
