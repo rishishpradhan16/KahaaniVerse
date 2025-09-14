@@ -1,35 +1,35 @@
 [
   {
     "id": "1",
-    "title": "The Enchanted Chronicles",
-    "author": "Elena Mysticwind",
-    "cover": "/assets/book1-cover.jpg",
-    "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-    "genre": "Mystery Thriller"
+    "title": "Shadows of Betrayal",
+    "author": "RP",
+    "cover": "/assets/book1-cover.png",
+    "description": "A mage-tinged noir where a betrayed guardian and a fallen ally collide while unraveling Blacklight City’s Syndicate web.",
+    "genre": "Fantasy"
   },
   {
     "id": "2",
-    "title": "Digital Dreams",
-    "author": "Kai Neonbyte",
-    "cover": "/assets/book2-cover.jpg",
-    "description": "In a world where reality and virtual existence blur, one hacker discovers the truth.",
-    "genre": "Horror"
+    "title": "The Veins of Kshirabindu",
+    "author": "Pradhan",
+    "cover": "/assets/book2-cover.png",
+    "description": "A chosen boy bonds with a river-dragon to heal living ley veins while outwitting the relentless Duskborn.",
+    "genre": "Fantasy"
   },
   {
     "id": "3",
-    "title": "Whispers of the Heart",
-    "author": "Victoria Rosehaven",
-    "cover": "/assets/book3-cover.jpg",
-    "description": "A tale of forbidden love set against the backdrop of Victorian England.",
-    "genre": "Mystery Thriller"
+    "title": "The Veil of Ashora",
+    "author": "Rishish",
+    "cover": "/assets/book3-cover.png",
+    "description": "Sibling-bound adventurers brave a sentient forest and a shifting prophecy to seal a gate between realms.",
+    "genre": "Fantasy"
   },
   {
     "id": "4",
-    "title": "The Quantum Garden",
-    "author": "Dr. Maya Patel",
-    "cover": "/assets/book1-cover.jpg",
-    "description": "A scientist discovers a garden where quantum physics and consciousness intertwine.",
-    "genre": "Sci-Fi"
+    "title": "Ashes of the Shattered Sun",
+    "author": "Rishish",
+    "cover": "/assets/book4-cover.png",
+    "description": "Three heirs of fire, shadow, and silver unite through brutal trials to overturn a prophecy and remake a fractured world.",
+    "genre": "Fantasy"
   },
   {
     "id": "5",
