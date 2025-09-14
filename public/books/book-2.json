@@ -1,10 +1,10 @@
 {
   "id": "2",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "The Veins of Kshirabindu",
+  "author": "Pradhan",
+  "cover": "/assets/book2-cover.png",
+  "description": "A chosen boy bonds with a river-dragon to heal living ley veins while outwitting the relentless Duskborn.",
+  "genre": "Fantasy",
   "pages": [
     {
       "id": "page-2-1",
@@ -479,8 +479,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "The Veins of Kshirabindu",
+      "description": "A chosen boy bonds with a river-dragon to heal living ley veins while outwitting the relentless Duskborn.",
       "pages": [
         {
           "id": "page-2-1",
