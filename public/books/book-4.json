@@ -1,10 +1,10 @@
 {
   "id": "4",
-  "title": "The Enchanted Chronicles",
-  "author": "Elena Mysticwind",
-  "cover": "/assets/book1-cover.jpg",
-  "description": "A mystical journey through ancient realms where magic and reality intertwine.",
-  "genre": "Mystery Thriller",
+  "title": "Ashes of the Shattered Sun",
+  "author": "Rishish",
+  "cover": "/assets/book4-cover.png",
+  "description": "Three heirs of fire, shadow, and silver unite through brutal trials to overturn a prophecy and remake a fractured world.",
+  "genre": "Fantasy",
   "pages": [
     {
       "id": "page-4-1",
@@ -914,8 +914,8 @@
   ],
   "languages": {
     "english": {
-      "title": "The Enchanted Chronicles",
-      "description": "A mystical journey through ancient realms where magic and reality intertwine.",
+      "title": "Ashes of the Shattered Sun",
+      "description": "Three heirs of fire, shadow, and silver unite through brutal trials to overturn a prophecy and remake a fractured world.",
       "pages": [
         {
           "id": "page-4-1",
